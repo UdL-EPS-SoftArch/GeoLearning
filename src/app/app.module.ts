@@ -15,6 +15,7 @@ import { AuthInterceptor } from './login-basic/auth-interceptor';
 
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
+import { ImageNameService } from './games/image-name/image-name.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -27,6 +28,7 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
 import { PlayerSearchComponent } from './player/player-search/player-search.component';
 import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImageNameListComponent } from './games/image-name/image-name-list/image-name-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PlayerEditComponent,
     PlayerSearchComponent,
     NotFoundComponent,
+    ImageNameListComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService
   ],
   bootstrap: [AppComponent]
 })
