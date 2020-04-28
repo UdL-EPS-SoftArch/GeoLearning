@@ -29,6 +29,7 @@ import { PlayerSearchComponent } from './player/player-search/player-search.comp
 import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImageNameListComponent } from './games/image-name/image-name-list/image-name-list.component';
+import { ImageNameDetailComponent } from './games/image-name/image-name-detail/image-name-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ImageNameListComponent } from './games/image-name/image-name-list/image
     PlayerSearchComponent,
     NotFoundComponent,
     ImageNameListComponent,
+    ImageNameDetailComponent,
   ],
   imports: [
     BrowserModule,
