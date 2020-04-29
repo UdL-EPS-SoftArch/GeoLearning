@@ -9,7 +9,8 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
 import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
 import { PlayerRegisterComponent } from './player/player-register/player-register.component';
 import { ImageNameListComponent } from './games/image-name/image-name-list/image-name-list.component';
-import { ImageNameDetailComponent } from './games/image-name/image-name-detail/image-name-detail.component'
+import { ImageNameDetailComponent } from './games/image-name/image-name-detail/image-name-detail.component';
+import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/image-name-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: PlayerRegisterComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'players', component: PlayerListComponent, canActivate: [LoggedInGuard] },
   { path: 'image-name-games', component: ImageNameListComponent, canActivate: [LoggedInGuard] },
   { path: 'image-name-games/:id', component: ImageNameDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'image-name-games/:id/delete', component: ImageNameDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },

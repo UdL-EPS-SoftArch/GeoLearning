@@ -30,6 +30,7 @@ import { NotFoundComponent } from './error-handler/error-alert/not-found.compone
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImageNameListComponent } from './games/image-name/image-name-list/image-name-list.component';
 import { ImageNameDetailComponent } from './games/image-name/image-name-detail/image-name-detail.component';
+import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/image-name-delete.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ImageNameDetailComponent } from './games/image-name/image-name-detail/i
     NotFoundComponent,
     ImageNameListComponent,
     ImageNameDetailComponent,
+    ImageNameDeleteComponent,
   ],
   imports: [
     BrowserModule,

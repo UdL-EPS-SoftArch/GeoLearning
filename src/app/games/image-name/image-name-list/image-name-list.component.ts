@@ -12,6 +12,7 @@ export class ImageNameListComponent implements OnInit {
   public pageSize = 5;
   public page = 1;
   public totalImageNameGames = 0;
+  public savedUri;
 
 
   constructor(
@@ -31,6 +32,12 @@ export class ImageNameListComponent implements OnInit {
   changePage() {
     this.imageNameService.page(this.page - 1).subscribe(
       (imageNameGames: ImageName[]) => this.imageNameGames = imageNameGames);
+  }
+  
+  getId(i: number) {
+    var uri = this.imageNameGames[i].uri.toString();
+    var splitted = uri.split('/');
+    return splitted[2];
   }
 
 }

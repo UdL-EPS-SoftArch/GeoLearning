@@ -3,6 +3,7 @@ import { ImageName } from '../imageName';
 import { ActivatedRoute } from '@angular/router';
 import { ImageNameService } from '../image-name.service';
 import { AuthenticationBasicService } from 'src/app/login-basic/authentication-basic.service';
+import { Game } from '../../game';
 
 @Component({
   selector: 'app-image-name-detail',
@@ -10,14 +11,17 @@ import { AuthenticationBasicService } from 'src/app/login-basic/authentication-b
 })
 export class ImageNameDetailComponent implements OnInit {
   public imageName: ImageName = new ImageName();
-  public id;
 
   constructor(private route: ActivatedRoute,
               private imageNameService: ImageNameService,
               private authenticationService: AuthenticationBasicService) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
+    this.imageNameService.get(id).subscribe(
+      imageName => {
+        this.imageName = imageName;
+      });
   }
 
 }
