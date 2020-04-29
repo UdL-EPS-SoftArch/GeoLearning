@@ -27,6 +27,12 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
 import { PlayerSearchComponent } from './player/player-search/player-search.component';
 import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContentCreatorListComponent } from './content-creator/content-creator-list/content-creator-list.component';
+import { ContentCreatorDeleteComponent } from './content-creator/content-creator-delete/content-creator-delete.component';
+import { ContentCreatorDetailComponent } from './content-creator/content-creator-detail/content-creator-detail.component';
+import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
+import { ContentCreatorRegisterComponent } from './content-creator/content-creator-register/content-creator-register.component';
+import { ContentCreatorSearchComponent } from './content-creator/content-creator-search/content-creator-search.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PlayerEditComponent,
     PlayerSearchComponent,
     NotFoundComponent,
+    ContentCreatorListComponent,
+    ContentCreatorDeleteComponent,
+    ContentCreatorDetailComponent,
+    ContentCreatorEditComponent,
+    ContentCreatorRegisterComponent,
+    ContentCreatorSearchComponent,
   ],
   imports: [
     BrowserModule,
