@@ -3,7 +3,6 @@ import { ImageName } from '../imageName';
 import { ActivatedRoute } from '@angular/router';
 import { ImageNameService } from '../image-name.service';
 import { AuthenticationBasicService } from 'src/app/login-basic/authentication-basic.service';
-import { Game } from '../../game';
 
 @Component({
   selector: 'app-image-name-detail',
