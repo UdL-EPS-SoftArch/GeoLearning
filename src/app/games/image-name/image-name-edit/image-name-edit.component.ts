@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ImageName } from '../imageName';
-import { ActivatedRoute, Router } from '@angular/router';
 import { ImageNameService } from '../image-name.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationBasicService } from 'src/app/login-basic/authentication-basic.service';
+import { ImageName } from '../imageName';
 
 @Component({
-  selector: 'app-image-name-delete',
-  templateUrl: './image-name-delete.component.html'
+  selector: 'app-image-name-edit',
+  templateUrl: './image-name-edit.component.html'
 })
-export class ImageNameDeleteComponent implements OnInit {
+
+export class ImageNameEditComponent implements OnInit {
   public imageName: ImageName = new ImageName();
   public id: string;
 
@@ -23,11 +24,16 @@ export class ImageNameDeleteComponent implements OnInit {
       imageName => this.imageName = imageName);
   }
 
-  delete() {
-    this.imageNameService.delete(this.imageName).subscribe(
-      () => {
-        this.router.navigate(['/image-name-games']);
+  onSubmit(): void {
+    this.imageName.instructions = this.imageName.instructions ? this.imageName.instructions : undefined; // Don't edit if not a reset
+    this.imageNameService.update(this.imageName).subscribe(
+      (imageName: ImageName) => {
+        this.router.navigate(['/image-name-games/' + this.id]);
       });
+  }
+
+  getCurrentUserName(): string {
+    return this.authenticationService.getCurrentUser().id;
   }
 
 }

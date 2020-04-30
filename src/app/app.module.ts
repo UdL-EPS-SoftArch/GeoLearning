@@ -31,6 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImageNameListComponent } from './games/image-name/image-name-list/image-name-list.component';
 import { ImageNameDetailComponent } from './games/image-name/image-name-detail/image-name-detail.component';
 import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/image-name-delete.component';
+import { ImageNameEditComponent } from './games/image-name/image-name-edit/image-name-edit.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/i
     ImageNameListComponent,
     ImageNameDetailComponent,
     ImageNameDeleteComponent,
+    ImageNameEditComponent,
   ],
   imports: [
     BrowserModule,
