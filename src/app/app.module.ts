@@ -27,6 +27,9 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
 import { PlayerSearchComponent } from './player/player-search/player-search.component';
 import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
+import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
+import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PlayerDeleteComponent,
     PlayerEditComponent,
     PlayerSearchComponent,
+    ImageOptionEditComponent,
+    ImageOptionDetailComponent,
+    ImageOptionListComponent,
     NotFoundComponent,
   ],
   imports: [
