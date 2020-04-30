@@ -11,6 +11,8 @@ import {ContentCreatorRegisterComponent} from './content-creator/content-creator
 import {ContentCreatorDetailComponent} from './content-creator/content-creator-detail/content-creator-detail.component';
 import {ContentCreatorDeleteComponent} from './content-creator/content-creator-delete/content-creator-delete.component';
 import { PlayerRegisterComponent } from './player/player-register/player-register.component';
+import { ContentCreatorListComponent } from './content-creator/content-creator-list/content-creator-list.component';
+import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
 
 const routes: Routes = [
   { path: 'register', component: ContentCreatorRegisterComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'players', component: PlayerListComponent, canActivate: [LoggedInGuard] },
   { path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'contentcreators/:id/delete', component: ContentCreatorDeleteComponent, canActivate: [LoggedInGuard] },
+  { path: 'contentcreators/:id/edit', component: ContentCreatorEditComponent, canActivate: [LoggedInGuard] },
   { path: 'contentcreators/:id', component: ContentCreatorDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'contentcreators', component: ContentCreatorListComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
