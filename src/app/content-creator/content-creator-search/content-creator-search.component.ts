@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { ContentcreatorService } from '../contentcreator.service';
+import { User } from '../../login-basic/user';
+import { Contentcreator } from '../contentcreator';
 
 @Component({
   selector: 'app-content-creator-search',
   templateUrl: './content-creator-search.component.html',
-  styleUrls: ['./content-creator-search.component.css']
 })
-export class ContentCreatorSearchComponent implements OnInit {
 
-  constructor() { }
+export class ContentCreatorSearchComponent {
+  @Input() users: User[];
+  @Output() emitResults: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit(): void {
+  constructor(private contentcreatorService: ContentcreatorService) {
   }
 
+  performSearch(text: string): void {
+    this.contentcreatorService.findByUsernameContaining(text).subscribe((contentcreators: Contentcreator[]) =>
+      this.emitResults.emit(contentcreators.sort((a, b) => a.id.localeCompare(b.id))));
+  }
 }

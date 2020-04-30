@@ -15,6 +15,7 @@ import { AuthInterceptor } from './login-basic/auth-interceptor';
 
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
+import { ContentcreatorService } from './content-creator/contentcreator.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -71,7 +72,7 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService
   ],
   bootstrap: [AppComponent]
 })
