@@ -15,7 +15,8 @@ import { ContentCreatorListComponent } from './content-creator/content-creator-l
 import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
 
 const routes: Routes = [
-  { path: 'register', component: ContentCreatorRegisterComponent},
+  { path: 'registerContentCreator', component: ContentCreatorRegisterComponent},
+  { path: 'registerPlayer', component: PlayerRegisterComponent},
   { path: 'players/:id/edit', component: PlayerEditComponent, canActivate: [LoggedInGuard] },
   { path: 'players/:id', component: PlayerDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'players', component: PlayerListComponent, canActivate: [LoggedInGuard] },
