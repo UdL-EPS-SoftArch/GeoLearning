@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
+import { ImageNameQuestion } from './imageNameQuestion';
+import { RestService } from '@lagoshny/ngx-hal-client';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ImageNameQuestionService {
+export class ImageNameQuestionService extends RestService<ImageNameQuestion> {
 
   constructor(injector: Injector) {
-    super(ImageName, 'imageNames', injector);
+    super(ImageNameQuestion, 'imageNames', injector);
   }
 }

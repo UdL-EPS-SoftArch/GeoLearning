@@ -12,7 +12,6 @@ export class ImageNameListComponent implements OnInit {
   public pageSize = 5;
   public page = 1;
   public totalImageNameGames = 0;
-  public savedUri;
 
 
   constructor(

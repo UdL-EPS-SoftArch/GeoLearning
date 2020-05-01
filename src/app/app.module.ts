@@ -33,8 +33,8 @@ import { ImageNameDetailComponent } from './games/image-name/image-name-detail/i
 import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/image-name-delete.component';
 import { ImageNameEditComponent } from './games/image-name/image-name-edit/image-name-edit.component';
 import { ImageNameCreateComponent } from './games/image-name/image-name-create/image-name-create.component';
-import { ImageNameQuestionComponent } from './questions/image-name-question/image-name-question.component';
 import { ImageNameQuestionListComponent } from './questions/image-name-questions/image-name-question-list/image-name-question-list.component';
+import { ImageNameQuestionService } from './questions/image-name-questions/image-name-question.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,6 @@ import { ImageNameQuestionListComponent } from './questions/image-name-questions
     ImageNameDeleteComponent,
     ImageNameEditComponent,
     ImageNameCreateComponent,
-    ImageNameQuestionComponent,
     ImageNameQuestionListComponent,
   ],
   imports: [
@@ -74,7 +73,7 @@ import { ImageNameQuestionListComponent } from './questions/image-name-questions
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService
   ],
   bootstrap: [AppComponent]
 })

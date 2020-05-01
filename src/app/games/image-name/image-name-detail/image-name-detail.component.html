@@ -11,6 +11,14 @@
           <p class="card-text">{{imageName.instructions}}</p>
         </div>
       </div>
+      <div class="card mb-4 card-block">
+        <div class="card-body row m-1">
+          <div class="col-md-12">
+            <h6 class="card-subtitle text-muted">Questions</h6>
+            <app-image-name-question-list></app-image-name-question-list>
+          </div>
+        </div>
+      </div>
       <div class="card-footer text-right">
         <button id="listBtn" type="button" [routerLink]="['/imageNames']"
                 class="btn m-1 btn-outline-primary">ImageName Games List
