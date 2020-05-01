@@ -34,6 +34,8 @@ import { ImageOptionCreateComponent } from './games/image-option/image-option-cr
 import {ImageOptionService} from "./games/image-option/image-option.service";
 import {ImageOptionQuestionService} from "./questions/image-option-question/image-option-question.service";
 import {ImageOptionQuestionCreateComponent} from "./questions/image-option-question/image-option-question-create/image-option-question-create.component";
+import {ImageOptionQuestionListComponent} from "./questions/image-option-question/image-option-question-list/image-option-question-list.component";
+
 
 
 
@@ -54,6 +56,7 @@ import {ImageOptionQuestionCreateComponent} from "./questions/image-option-quest
     ImageOptionListComponent,
     ImageOptionCreateComponent,
     ImageOptionQuestionCreateComponent,
+    ImageOptionQuestionListComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class ImageOptionQuestionCreateComponent implements OnInit {
   public imageOptionQuestion: ImageOptionQuestion;
 
   constructor( private router: Router,
-               private tournamentService: ImageOptionQuestionService,
+               private iamgeOptionQuestionService: ImageOptionQuestionService,
                private location: Location) { }
 
   ngOnInit() {
@@ -22,8 +22,8 @@ export class ImageOptionQuestionCreateComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.tournamentService.create(this.imageOptionQuestion).subscribe(
-      (tournament: ImageOptionQuestion) => this.router.navigate(['/image-option-question/new'])); // ruta API-post
+    this.iamgeOptionQuestionService.create(this.imageOptionQuestion).subscribe(
+      (tournament: ImageOptionQuestion) => this.location.back()); // ruta API-post
   }
 
   goBack() {

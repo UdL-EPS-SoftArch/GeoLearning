@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ImageOptionService } from '../image-option.service';
 import { Location } from '@angular/common';
 import {ImageOption} from "../imageOption";
+import get = Reflect.get;
 
 @Component({
   selector: 'app-image-option-create',
@@ -23,11 +24,15 @@ export class ImageOptionCreateComponent implements OnInit {
   onSubmit(): void {
     this.imageOptionService.create(this.imageOption).subscribe(
       (imageOption: ImageOption) => {
-        this.router.navigate(['/image-option-games']);
+        this.router.navigate(['/image-option-question/'+this.getId()]);
       }
     )
   }
-
+  getId() {
+    var uri = this.imageOption.uri.toString();
+    var splitted = uri.split('/');
+    return splitted[2];
+  }
   goBack() {
     this.location.back();
   }

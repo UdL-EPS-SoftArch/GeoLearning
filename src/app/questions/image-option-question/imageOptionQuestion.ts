@@ -11,6 +11,7 @@ export class ImageOptionQuestion extends Resource {
   optionC: String;
   optionD: String;
   optionE: String;
+  uri: String;
 
   constructor(values: object = {}) {
     super();
