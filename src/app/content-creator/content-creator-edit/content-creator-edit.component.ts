@@ -26,7 +26,8 @@ export class ContentCreatorEditComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.contentcreator.password = this.contentcreator.passwordReset ? this.contentcreator.password : undefined; // Don't edit if not a reset
+    this.contentcreator.password =
+      this.contentcreator.passwordReset ? this.contentcreator.password : undefined; // Don't edit if not a reset
     this.contentCreatorService.patch(this.contentcreator).subscribe(
       (contentcreator: ContentCreator) => {
         if (this.contentcreator.passwordReset) {
