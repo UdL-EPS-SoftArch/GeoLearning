@@ -28,8 +28,8 @@ import { PlayerSearchComponent } from './player/player-search/player-search.comp
 import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
-import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
-import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
+//import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
+//import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
 import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
 
 
@@ -44,8 +44,8 @@ import { ImageOptionCreateComponent } from './games/image-option/image-option-cr
     PlayerDeleteComponent,
     PlayerEditComponent,
     PlayerSearchComponent,
-    ImageOptionEditComponent,
-    ImageOptionDetailComponent,
+    //ImageOptionEditComponent,
+    //ImageOptionDetailComponent,
     ImageOptionListComponent,
     ImageOptionCreateComponent,
     NotFoundComponent,
