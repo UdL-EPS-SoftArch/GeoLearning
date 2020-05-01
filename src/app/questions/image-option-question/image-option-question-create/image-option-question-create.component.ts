@@ -1,8 +1,10 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, Injectable } from '@angular/core';
 import {ImageOptionQuestion} from '../imageOptionQuestion';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ImageOptionQuestionService } from '../image-option-question.service';
+import {ImageOptionService} from "../../../games/image-option/image-option.service";
+import {ImageOption} from "../../../games/image-option/imageOption";
 
 
 @Component({
@@ -12,21 +14,25 @@ import { ImageOptionQuestionService } from '../image-option-question.service';
 export class ImageOptionQuestionCreateComponent implements OnInit {
 
   public imageOptionQuestion: ImageOptionQuestion;
+  public imageOption: ImageOption = new ImageOption();
 
   constructor( private router: Router,
-               private iamgeOptionQuestionService: ImageOptionQuestionService,
+               private Router: ActivatedRoute,
+               private imageOptionQuestionService: ImageOptionQuestionService,
+               private imageOptionService: ImageOptionService,
                private location: Location) { }
 
   ngOnInit() {
+    const id = this.Router.snapshot.paramMap.get('id');
     this.imageOptionQuestion = new ImageOptionQuestion();
+    this.imageOptionService.get(id).subscribe(imageOption => this.imageOption = imageOption );
+
   }
 
   public onSubmit(): void {
-    this.iamgeOptionQuestionService.create(this.imageOptionQuestion).subscribe(
-      (tournament: ImageOptionQuestion) => this.location.back()); // ruta API-post
+    this.imageOption.questions.push(this.imageOptionQuestion);
+    this.imageOptionService.update(this.imageOption).subscribe();
+    this.imageOptionQuestionService.create(this.imageOptionQuestion).subscribe(() => this.location.back());
   }
 
-  goBack() {
-    this.location.back();
-  }
 }

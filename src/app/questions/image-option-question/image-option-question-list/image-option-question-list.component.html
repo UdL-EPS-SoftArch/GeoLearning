@@ -42,9 +42,11 @@
     <!-- Button -->
     <div class="form-group">
       <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Create</button> <!--ruta de creació-->
-      <button id="addBtn" type="button" [routerLink]="['/image-option-question/new']" class="btn m-1 btn-outline-primary pull-right">Add question</button>
+      <button id="addBtn" type="button" [routerLink]="['/image-option-question/'+getId()+'/add']" class="btn m-1 btn-outline-primary pull-right">Add question</button>
     </div>
-
   </fieldset>
+  <ngb-pagination class="d-flex justify-content-center"
+                  [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalImageOptionQuestions"
+                  (pageChange)="changePage()"></ngb-pagination>
 </form>
 

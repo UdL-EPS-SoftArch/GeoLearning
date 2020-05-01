@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'players', component: PlayerListComponent, canActivate: [LoggedInGuard] },
   { path: 'image-option-games', component: ImageOptionListComponent, canActivate: [LoggedInGuard] },
   { path: 'image-option-games/new', component: ImageOptionCreateComponent, canActivate: [LoggedInGuard] },
-  { path: 'image-option-question/new', component: ImageOptionQuestionCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'image-option-question/:id/add', component: ImageOptionQuestionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'image-option-question/:id', component: ImageOptionQuestionListComponent, canActivate: [LoggedInGuard] },
   //{ path: 'image-option-games/:id', component: ImageOptionDetailComponent, canActivate: [LoggedInGuard] },
   //{ path: 'image-option-games/:id/edit', component: ImageOptionEditComponent, canActivate: [LoggedInGuard] },
