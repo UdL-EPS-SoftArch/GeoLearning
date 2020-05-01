@@ -13,6 +13,8 @@ export class ImageOptionListComponent implements OnInit {
   public pageSize = 5;
   public page = 1;
   public totalImageOptionGames = 0;
+  public savedUri;
+
 
   constructor(
     public router: Router,
