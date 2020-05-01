@@ -9,6 +9,4 @@ export class ImageOptionService extends RestService<ImageOption> {
   constructor(injector: Injector) {
     super(ImageOption, 'imageOptions', injector);
   }
-
-
 }

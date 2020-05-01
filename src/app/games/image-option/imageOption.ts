@@ -1,4 +1,4 @@
-import { ImageOptionQuestion } from 'src/app/questions/imageOptionQuestion/ImageOptionQuestion';
+import { ImageOptionQuestion } from 'src/app/questions/image-option-question/ImageOptionQuestion';
 import { Games } from '../games'
 
 

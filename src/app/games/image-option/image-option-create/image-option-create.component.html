@@ -13,6 +13,7 @@
 
     <!-- Button -->
     <div class="form-group">
+      <button id="addBtn" type="button" [routerLink]="['/image-option-question/new']" class="btn m-1 btn-outline-primary pull-right">Add question</button>
       <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Create</button> <!--ruta de creació-->
       <button id="listBtn" type="button" [routerLink]="['']" class="btn m-1 btn-outline-primary pull-right">Back</button>
     </div>
