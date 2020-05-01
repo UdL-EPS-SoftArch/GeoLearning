@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContentcreatorService } from '../contentcreator.service';
-import { Contentcreator } from '../contentcreator';
+import { ContentCreator } from '../contentCreator';
 import { User } from '../../login-basic/user';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 
@@ -10,7 +10,7 @@ import { AuthenticationBasicService } from '../../login-basic/authentication-bas
   templateUrl: './content-creator-detail.component.html'
 })
 export class ContentCreatorDetailComponent implements OnInit {
-  public contentcreator: Contentcreator = new Contentcreator();
+  public contentcreator: ContentCreator = new ContentCreator();
 
   constructor(private route: ActivatedRoute,
               private contentcreatorService: ContentcreatorService,

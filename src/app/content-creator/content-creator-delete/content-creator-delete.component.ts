@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContentcreatorService } from '../contentcreator.service';
-import { Contentcreator } from '../contentcreator';
+import { ContentCreator } from '../contentCreator';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AuthenticationBasicService } from '../../login-basic/authentication-bas
   templateUrl: './content-creator-delete.component.html'
 })
 export class ContentCreatorDeleteComponent implements OnInit {
-  public user: Contentcreator = new Contentcreator();
+  public user: ContentCreator = new ContentCreator();
   private id: string;
 
   constructor(private route: ActivatedRoute,

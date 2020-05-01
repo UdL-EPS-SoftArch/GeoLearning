@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ContentcreatorService } from '../contentcreator.service';
-import { Contentcreator } from '../contentcreator';
+import { ContentCreator } from '../contentCreator';
 import { Sort } from '@lagoshny/ngx-hal-client';
 
 @Component({
@@ -9,7 +9,7 @@ import { Sort } from '@lagoshny/ngx-hal-client';
   templateUrl: './content-creator-list.component.html'
 })
 export class ContentCreatorListComponent implements OnInit {
-  public contentcreators: Contentcreator[] = [];
+  public contentcreators: ContentCreator[] = [];
   public pageSize = 5;
   public page = 1;
   public totalContentcreators = 0;
@@ -22,7 +22,7 @@ export class ContentCreatorListComponent implements OnInit {
 
   ngOnInit() {
     this.contentcreatorService.getAll({size: this.pageSize, sort: this.sorting}).subscribe(
-      (contentcreators: Contentcreator[]) => {
+      (contentcreators: ContentCreator[]) => {
         this.contentcreators = contentcreators;
         this.totalContentcreators = this.contentcreatorService.totalElement();
       });
@@ -30,6 +30,6 @@ export class ContentCreatorListComponent implements OnInit {
 
   changePage() {
     this.contentcreatorService.page(this.page - 1).subscribe(
-      (contentcreators: Contentcreator[]) => this.contentcreators = contentcreators);
+      (contentcreators: ContentCreator[]) => this.contentcreators = contentcreators);
   }
 }

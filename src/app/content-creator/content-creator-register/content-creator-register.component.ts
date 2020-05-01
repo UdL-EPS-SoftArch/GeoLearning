@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import { ContentcreatorService } from '../contentcreator.service';
-import {Contentcreator} from '../contentcreator';
+import {ContentCreator} from '../contentCreator';
 import { User } from '../../login-basic/user';
 
 
@@ -12,7 +12,7 @@ import { User } from '../../login-basic/user';
 })
 
 export class ContentCreatorRegisterComponent implements OnInit {
-  public user: Contentcreator;
+  public user: ContentCreator;
 
   constructor(private router: Router,
               private contentcreatorService: ContentcreatorService,
@@ -20,12 +20,12 @@ export class ContentCreatorRegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.user = new Contentcreator();
+    this.user = new ContentCreator();
   }
 
   onSubmit(): void {
     this.contentcreatorService.create(this.user).subscribe(
-      (contentcreator: Contentcreator) => {
+      (contentcreator: ContentCreator) => {
         this.authenticationBasicService.login(contentcreator.id, contentcreator.password).subscribe(
           (user: User) => this.router.navigate([user.uri]))
       });

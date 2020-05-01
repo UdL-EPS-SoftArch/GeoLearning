@@ -1,7 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { ContentcreatorService } from '../contentcreator.service';
 import { User } from '../../login-basic/user';
-import { Contentcreator } from '../contentcreator';
+import { ContentCreator } from '../contentCreator';
 
 @Component({
   selector: 'app-content-creator-search',
@@ -16,7 +16,7 @@ export class ContentCreatorSearchComponent {
   }
 
   performSearch(text: string): void {
-    this.contentcreatorService.findByUsernameContaining(text).subscribe((contentcreators: Contentcreator[]) =>
+    this.contentcreatorService.findByUsernameContaining(text).subscribe((contentcreators: ContentCreator[]) =>
       this.emitResults.emit(contentcreators.sort((a, b) => a.id.localeCompare(b.id))));
   }
 }
