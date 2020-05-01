@@ -22,8 +22,8 @@ export class ImageNameCreateComponent implements OnInit {
 
   onSubmit(): void {
     this.imageNameService.create(this.imageName).subscribe(
-      () => {
-        this.router.navigate(['/image-name-games']);
+      (imageName:ImageName) => {
+        this.router.navigate([imageName.uri]);
       }
     )
   }

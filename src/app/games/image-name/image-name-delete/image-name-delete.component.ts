@@ -26,7 +26,7 @@ export class ImageNameDeleteComponent implements OnInit {
   delete() {
     this.imageNameService.delete(this.imageName).subscribe(
       () => {
-        this.router.navigate(['/image-name-games']);
+        this.router.navigate(['/imageNames']);
       });
   }
 

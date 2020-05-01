@@ -33,6 +33,8 @@ import { ImageNameDetailComponent } from './games/image-name/image-name-detail/i
 import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/image-name-delete.component';
 import { ImageNameEditComponent } from './games/image-name/image-name-edit/image-name-edit.component';
 import { ImageNameCreateComponent } from './games/image-name/image-name-create/image-name-create.component';
+import { ImageNameQuestionComponent } from './questions/image-name-question/image-name-question.component';
+import { ImageNameQuestionListComponent } from './questions/image-name-questions/image-name-question-list/image-name-question-list.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { ImageNameCreateComponent } from './games/image-name/image-name-create/i
     ImageNameDeleteComponent,
     ImageNameEditComponent,
     ImageNameCreateComponent,
+    ImageNameQuestionComponent,
+    ImageNameQuestionListComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@ export class ImageNameEditComponent implements OnInit {
     this.imageName.instructions = this.imageName.instructions ? this.imageName.instructions : undefined; // Don't edit if not a reset
     this.imageNameService.update(this.imageName).subscribe(
       (imageName: ImageName) => {
-        this.router.navigate(['/image-name-games/' + this.id]);
+        this.router.navigate(['/imageNames/' + this.id]);
       });
   }
 
