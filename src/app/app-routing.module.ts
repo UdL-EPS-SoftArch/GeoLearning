@@ -11,6 +11,8 @@ import { PlayerRegisterComponent } from './player/player-register/player-registe
 import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
 import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
 import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
+import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
+
 
 
 
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'players/:id', component: PlayerDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'players', component: PlayerListComponent, canActivate: [LoggedInGuard] },
   { path: 'image-option-games', component: ImageOptionListComponent, canActivate: [LoggedInGuard] },
+  { path: 'image-option-games/new', component: ImageOptionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'image-option-games/:id', component: ImageOptionDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'image-option-games/:id/edit', component: ImageOptionEditComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
