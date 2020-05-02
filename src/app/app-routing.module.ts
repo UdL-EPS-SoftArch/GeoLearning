@@ -13,6 +13,7 @@ import { ImageNameDetailComponent } from './games/image-name/image-name-detail/i
 import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/image-name-delete.component';
 import { ImageNameEditComponent } from './games/image-name/image-name-edit/image-name-edit.component';
 import { ImageNameCreateComponent } from './games/image-name/image-name-create/image-name-create.component';
+import { ImageNameQuestionCreateComponent } from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
 
 const routes: Routes = [
   { path: 'register', component: PlayerRegisterComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'imageNames/:id/delete', component: ImageNameDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'imageNames/:id/edit', component: ImageNameEditComponent, canActivate: [LoggedInGuard] },
   { path: 'imageNames-create', component: ImageNameCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'imageNameQuestion-create', component: ImageNameQuestionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
