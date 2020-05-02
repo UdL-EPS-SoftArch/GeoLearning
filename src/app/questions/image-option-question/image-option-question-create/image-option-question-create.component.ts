@@ -33,6 +33,7 @@ export class ImageOptionQuestionCreateComponent implements OnInit {
     this.imageOptionService.get(id).subscribe((imageOption: ImageOption) => {
       this.imageOption = imageOption;
       imageOption.getRelation(ImageOption, 'game_id').subscribe(() => this.imageOption.questions.push(this.imageOptionQuestion))
+      console.log(imageOption)
     });
 
     this.imageOptionQuestionService.create(this.imageOptionQuestion).subscribe(() => this.location.back());

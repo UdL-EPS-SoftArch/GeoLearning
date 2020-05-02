@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ImageOptionQuestionService } from '../image-option-question.service';
 import get = Reflect.get;
 import {ImageOption} from "../../../games/image-option/imageOption";
+import {ImageOptionService} from "../../../games/image-option/image-option.service";
 
 
 @Component({
@@ -20,14 +21,14 @@ export class ImageOptionQuestionListComponent implements OnInit {
   constructor( private router: ActivatedRoute,
                private routers: Router,
                private imageOptionQuestionService: ImageOptionQuestionService,
+               private imageOptionService: ImageOptionService,
                private location: Location) { }
 
   ngOnInit(): void {
     const id = this.router.snapshot.paramMap.get('id');
     const uri: string = "/"+id+"/questions";
-    this.imageOptionQuestionService.customQuery(uri, {size: this.pageSize}).subscribe(
-      (imageOptionQuestions: ImageOptionQuestion[]) => {
-        this.imageOptionQuestions = imageOptionQuestions;
+    this.imageOptionService.customQuery(uri, {size: this.pageSize}).subscribe(
+      () => {
         this.totalImageOptionQuestions = this.imageOptionQuestionService.totalElement();
       }
     )
