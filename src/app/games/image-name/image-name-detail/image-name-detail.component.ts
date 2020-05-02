@@ -10,13 +10,14 @@ import { AuthenticationBasicService } from 'src/app/login-basic/authentication-b
 })
 export class ImageNameDetailComponent implements OnInit {
   public imageName: ImageName = new ImageName();
+  public id: string;
 
   constructor(private route: ActivatedRoute,
               private imageNameService: ImageNameService) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.imageNameService.get(id).subscribe(
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.imageNameService.get(this.id).subscribe(
       imageName => {
         this.imageName = imageName;
       });
