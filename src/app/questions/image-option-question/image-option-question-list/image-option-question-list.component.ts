@@ -24,7 +24,7 @@ export class ImageOptionQuestionListComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.router.snapshot.paramMap.get('id');
-    const uri: string = "/image-option-question/"+id;
+    const uri: string = "/"+id+"/questions";
     this.imageOptionQuestionService.customQuery(uri, {size: this.pageSize}).subscribe(
       (imageOptionQuestions: ImageOptionQuestion[]) => {
         this.imageOptionQuestions = imageOptionQuestions;

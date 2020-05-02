@@ -23,16 +23,22 @@ export class ImageOptionQuestionCreateComponent implements OnInit {
                private location: Location) { }
 
   ngOnInit() {
-    const id = this.Router.snapshot.paramMap.get('id');
     this.imageOptionQuestion = new ImageOptionQuestion();
-    this.imageOptionService.get(id).subscribe(imageOption => this.imageOption = imageOption );
 
   }
 
   public onSubmit(): void {
-    this.imageOption.questions.push(this.imageOptionQuestion);
-    this.imageOptionService.update(this.imageOption).subscribe();
+    const id = this.Router.snapshot.paramMap.get('id');
+
+    this.imageOptionService.get(id).subscribe((imageOption: ImageOption) => {
+      this.imageOption = imageOption;
+      imageOption.getRelation(ImageOption, 'game_id').subscribe(() => this.imageOption.questions.push(this.imageOptionQuestion))
+    });
+
     this.imageOptionQuestionService.create(this.imageOptionQuestion).subscribe(() => this.location.back());
   }
-
+  /*this.teamService.get(id).subscribe((team: Team) => {
+  this.team = team;
+  team.getRelation(Player, 'leader').subscribe((leader: Player) => this.team.leader = leader);
+});*/
 }
