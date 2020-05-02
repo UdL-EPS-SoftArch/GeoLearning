@@ -37,7 +37,7 @@ import { ImageNameQuestionListComponent } from './questions/image-name-questions
 import { ImageNameQuestionService } from './questions/image-name-questions/image-name-question.service';
 import { ImageNameQuestionEditComponent } from './questions/image-name-questions/image-name-question-edit/image-name-question-edit.component';
 import { ImageNameQuestionCreateComponent } from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
-import { ImageNameQuestionDetailComponent } from './questions/image-name-questions/image-name-question-detail/image-name-question-detail.component';
+import { HttpClientService } from './httpClient.service';
 
 @NgModule({
   declarations: [
@@ -58,8 +58,7 @@ import { ImageNameQuestionDetailComponent } from './questions/image-name-questio
     ImageNameCreateComponent,
     ImageNameQuestionListComponent,
     ImageNameQuestionEditComponent,
-    ImageNameQuestionCreateComponent,
-    ImageNameQuestionDetailComponent,
+    ImageNameQuestionCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +78,7 @@ import { ImageNameQuestionDetailComponent } from './questions/image-name-questio
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, HttpClientService
   ],
   bootstrap: [AppComponent]
 })

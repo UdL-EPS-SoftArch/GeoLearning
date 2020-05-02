@@ -8,6 +8,6 @@ import { RestService } from '@lagoshny/ngx-hal-client';
 export class ImageNameQuestionService extends RestService<ImageNameQuestion> {
 
   constructor(injector: Injector) {
-    super(ImageNameQuestion, 'imageNames', injector);
+    super(ImageNameQuestion, '', injector);
   }
 }

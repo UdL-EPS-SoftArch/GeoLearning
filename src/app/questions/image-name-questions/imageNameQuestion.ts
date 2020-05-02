@@ -3,6 +3,7 @@ import { Resource } from '@lagoshny/ngx-hal-client';
 
 
 export class ImageNameQuestion extends Resource {
+    uri: String;
     imageName: ImageName;
     image: String;
     solution: String;

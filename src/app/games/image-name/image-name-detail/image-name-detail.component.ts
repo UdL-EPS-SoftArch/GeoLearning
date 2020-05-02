@@ -12,8 +12,7 @@ export class ImageNameDetailComponent implements OnInit {
   public imageName: ImageName = new ImageName();
 
   constructor(private route: ActivatedRoute,
-              private imageNameService: ImageNameService,
-              private authenticationService: AuthenticationBasicService) { }
+              private imageNameService: ImageNameService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
