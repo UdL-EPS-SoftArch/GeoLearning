@@ -16,6 +16,7 @@ import { AuthInterceptor } from './login-basic/auth-interceptor';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
 import { ContentcreatorService } from './content-creator/contentcreator.service';
+import { ImageImageService } from './games/image-image/image-image.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -34,6 +35,8 @@ import { ContentCreatorDetailComponent } from './content-creator/content-creator
 import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
 import { ContentCreatorRegisterComponent } from './content-creator/content-creator-register/content-creator-register.component';
 import { ContentCreatorSearchComponent } from './content-creator/content-creator-search/content-creator-search.component';
+import { ImageImageCreateComponent } from './games/image-image/image-image-create/image-image-create.component';
+import { ImageImageListComponent } from './games/image-image/image-image-list/image-image-list.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,8 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     ContentCreatorEditComponent,
     ContentCreatorRegisterComponent,
     ContentCreatorSearchComponent,
+    ImageImageCreateComponent,
+    ImageImageListComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,7 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService, ImageImageService
   ],
   bootstrap: [AppComponent]
 })
