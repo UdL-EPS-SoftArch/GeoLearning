@@ -34,6 +34,11 @@ import { ContentCreatorDetailComponent } from './content-creator/content-creator
 import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
 import { ContentCreatorRegisterComponent } from './content-creator/content-creator-register/content-creator-register.component';
 import { ContentCreatorSearchComponent } from './content-creator/content-creator-search/content-creator-search.component';
+import { MatchResultComponent } from './match-result/match-result.component';
+import { MatchResultEditComponent } from './match-result-edit/match-result-edit.component';
+import { MatchResultDeleteComponent } from './match-result-delete/match-result-delete.component';
+import { MatchResultDetailComponent } from './match-result-detail/match-result-detail.component';
+import { MatchResultListComponent } from './match-result-list/match-result-list.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     ContentCreatorEditComponent,
     ContentCreatorRegisterComponent,
     ContentCreatorSearchComponent,
+    MatchResultComponent,
+    MatchResultEditComponent,
+    MatchResultDeleteComponent,
+    MatchResultDetailComponent,
+    MatchResultListComponent,
   ],
   imports: [
     BrowserModule,
