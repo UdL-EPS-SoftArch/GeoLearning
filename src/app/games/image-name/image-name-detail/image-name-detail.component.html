@@ -16,6 +16,11 @@
           <div class="col-md-12">
             <h6 class="card-subtitle text-muted">Questions</h6>
             <app-image-name-question-list></app-image-name-question-list>
+            <div class="d-flex justify-content-end">
+              <button id="createBtn" type="button" class="btn m-1 btn-primary" [routerLink]="['addQuestion']" routerLinkActive="router-link-active" >
+                Create
+              </button>
+            </div>
           </div>
         </div>
       </div>

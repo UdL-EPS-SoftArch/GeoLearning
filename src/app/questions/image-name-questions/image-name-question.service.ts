@@ -11,3 +11,14 @@ export class ImageNameQuestionService extends RestService<ImageNameQuestion> {
     super(ImageNameQuestion, '', injector);
   }
 }
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ImageNameQuestionServiceExtended extends RestService<ImageNameQuestion> {
+
+  constructor(injector: Injector) {
+    super(ImageNameQuestion, 'imageNameQuestions', injector);
+  }
+}

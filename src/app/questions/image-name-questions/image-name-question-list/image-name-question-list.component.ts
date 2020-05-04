@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ImageNameQuestion } from '../imageNameQuestion';
 import { ImageNameQuestionService } from '../image-name-question.service';
-import { HttpClientService } from 'src/app/httpClient.service';
 import { Observable, Observer } from 'rxjs';
 
 @Component({
@@ -11,32 +10,22 @@ import { Observable, Observer } from 'rxjs';
 })
 export class ImageNameQuestionListComponent implements OnInit {
   public imageNameQuestions: ImageNameQuestion[] = [];
-  public pageSize = 5;
-  public page = 1;
-  public totalImageNameQuestions = 0;
   base64Image: any;
 
   constructor(private route: ActivatedRoute,
               public router: Router,
-              private imageNameQuestionsService: ImageNameQuestionService,
-              private httpService: HttpClientService) {
+              private imageNameQuestionsService: ImageNameQuestionService) {
 
     }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     const uri: string = "imageNames/" + id + "/questions"
-    this.imageNameQuestionsService.customQuery(uri, {size: this.pageSize}).subscribe(
+    this.imageNameQuestionsService.customQuery(uri).subscribe(
       (imageNameQuestions: ImageNameQuestion[]) => {
         this.imageNameQuestions = imageNameQuestions;
-        this.totalImageNameQuestions = this.imageNameQuestionsService.totalElement();
       }
     )
-  }
-
-  changePage() {
-    this.imageNameQuestionsService.page(this.page - 1).subscribe(
-      (imageNameQuestions: ImageNameQuestion[]) => this.imageNameQuestions = imageNameQuestions);
   }
 
   getImage(imageUrl: string): any{

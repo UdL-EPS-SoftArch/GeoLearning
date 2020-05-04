@@ -1,9 +1,8 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ImageNameQuestion } from '../imageNameQuestion';
-import { Router } from '@angular/router';
-import { ImageNameQuestionService } from '../image-name-question.service';
-import { AuthenticationBasicService } from 'src/app/login-basic/authentication-basic.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ImageNameQuestionServiceExtended } from '../image-name-question.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-image-name-question-create',
@@ -13,20 +12,32 @@ export class ImageNameQuestionCreateComponent implements OnInit {
 
   public imageNameQuestion: ImageNameQuestion;
 
-  constructor(private router: Router,
-              private imageNameQuestionService: ImageNameQuestionService,
-              private authenticationService: AuthenticationBasicService) { }
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private imageNameQuestionServiceExtended: ImageNameQuestionServiceExtended,
+              private _location: Location) {}
 
   ngOnInit(): void {
     this.imageNameQuestion = new ImageNameQuestion();
   }
 
   onSubmit(): void {
-    this.imageNameQuestionService.create(this.imageNameQuestion).subscribe(
-      (imageNameQuestion:ImageNameQuestion) => {
-        this.router.navigate([imageNameQuestion.uri]);
+    const id = this.route.snapshot.paramMap.get('id');
+    var imageNameUri: string = "/imageNames/" + id;
+    this.imageNameQuestion.imageName = imageNameUri;
+    this.imageNameQuestionServiceExtended.create(this.imageNameQuestion).subscribe(
+      () => {
+        this.router.navigate([imageNameUri]);
       }
     )
+  }
+
+  backClicked() {
+    this._location.back();
+  }
+
+  checkURL(url) {
+    return(url.match(/\.(jpeg|jpg|svg)$/) != null);
   }
 
 }

@@ -13,8 +13,7 @@ export class ImageNameCreateComponent implements OnInit {
   public imageName: ImageName;
 
   constructor(private router: Router,
-              private imageNameService: ImageNameService,
-              private authenticationService: AuthenticationBasicService) { }
+              private imageNameService: ImageNameService) { }
 
   ngOnInit(): void {
     this.imageName = new ImageName();

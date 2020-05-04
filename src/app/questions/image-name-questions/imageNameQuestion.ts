@@ -4,9 +4,10 @@ import { Resource } from '@lagoshny/ngx-hal-client';
 
 export class ImageNameQuestion extends Resource {
     uri: String;
-    imageName: ImageName;
+    imageName: string;
     image: String;
     solution: String;
+    id: string;
 
     constructor(values: object = {}) {
         super();
