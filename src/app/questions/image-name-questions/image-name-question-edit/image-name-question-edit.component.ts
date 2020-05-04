@@ -12,24 +12,32 @@ import { ImageNameQuestionService } from '../image-name-question.service';
 export class ImageNameQuestionEditComponent implements OnInit {
   public id: string;
   public idq: string;
-  public imageNameQuestion: ImageNameQuestion;
+  public imageNameQuestion: ImageNameQuestion = new ImageNameQuestion();
 
   constructor(private route: ActivatedRoute,
               private imageNameQuestionService: ImageNameQuestionService,
               private authenticationService: AuthenticationBasicService,
-              private _location: Location) { }
+              private _location: Location,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.idq = this.route.snapshot.paramMap.get('idq');
-    this.imageNameQuestion = new ImageNameQuestion();
+    this.id = this.route.snapshot.paramMap.get('id');
+    
+    var url : string = 'imageNames/' + this.id + '/questions/' + this.idq; 
+    this.imageNameQuestionService.get(url).subscribe(
+      imageNameQuestion => this.imageNameQuestion = imageNameQuestion);
   }
 
   onSubmit(): void {
-    this.imageNameQuestionService.create(this.imageNameQuestion).subscribe(
-      (imageNameQuestion:ImageNameQuestion) => {
+    this.imageNameQuestion.image = this.imageNameQuestion.image ? this.imageNameQuestion.image : undefined; // Don't edit if not a reset
+    this.imageNameQuestion.solution = this.imageNameQuestion.solution ? this.imageNameQuestion.solution : undefined; //Don't edit if not a reset
+    
+    this.imageNameQuestionService.update(this.imageNameQuestion).subscribe(
+      () => {
         this._location.back();
       }
-    )
+    );
   }
 
   backClicked() {
