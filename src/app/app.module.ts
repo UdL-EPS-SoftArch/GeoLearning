@@ -38,6 +38,7 @@ import { ImageNameQuestionService } from './questions/image-name-questions/image
 import { ImageNameQuestionEditComponent } from './questions/image-name-questions/image-name-question-edit/image-name-question-edit.component';
 import { ImageNameQuestionCreateComponent } from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
 import { HttpClientService } from './httpClient.service';
+import { ImageNameQuestionDeleteComponent } from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { HttpClientService } from './httpClient.service';
     ImageNameCreateComponent,
     ImageNameQuestionListComponent,
     ImageNameQuestionEditComponent,
-    ImageNameQuestionCreateComponent
+    ImageNameQuestionCreateComponent,
+    ImageNameQuestionDeleteComponent
   ],
   imports: [
     BrowserModule,
