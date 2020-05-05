@@ -67,7 +67,7 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     ImageNameQuestionListComponent,
     ImageNameQuestionEditComponent,
     ImageNameQuestionCreateComponent,
-    ImageNameQuestionDeleteComponent
+    ImageNameQuestionDeleteComponent,
     ContentCreatorListComponent,
     ContentCreatorDeleteComponent,
     ContentCreatorDetailComponent,
@@ -93,8 +93,8 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, HttpClientService
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService,
+    HttpClientService, ContentcreatorService
   ],
   bootstrap: [AppComponent]
 })
