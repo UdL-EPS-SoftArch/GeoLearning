@@ -1,6 +1,14 @@
 <h2>Create MatchResult</h2>
-<form id="match-result-edit" (ngSubmit)="onSubmit()" #form="ngForm">
+<form id="match-result-create" (ngSubmit)="onSubmit()" #form="ngForm">
   <fieldset>
+
+    <!-- Player input -->
+    <div class="form-group" [class.was-validated]="player.dirty || player.touched">
+      <label class="control-label" for="player">Player:</label>
+      <input id="player" name="player" type="text" class="form-control" required
+             [(ngModel)]="matchResult.player" #player="ngModel">
+      <div class="invalid-feedback">A Player is required</div>
+    </div>
 
     <!-- Result input -->
     <div class="form-group" [class.was-validated]="result.dirty || result.touched">
@@ -13,14 +21,14 @@
     <!-- Time input -->
     <div class="form-group" [class.was-validated]="time.dirty || time.touched">
       <label class="control-label" for="time">Time:</label>
-      <input id="time" name="time" type="number" class="form-control" required
+      <input id="time" name="time" type="text" class="form-control" required
              [(ngModel)]="matchResult.time" #time="ngModel">
       <div class="invalid-feedback">A Time is required</div>
     </div>
 
     <!-- Button -->
     <div class="form-group">
-      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Edit
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Create
       </button>
       <button id="listBtn" type="button" [routerLink]="['']" class="btn m-1 btn-outline-primary pull-right">Back
       </button>

@@ -1,1 +1,30 @@
-<p>match-result-list works!</p>
+<!--This is the html for match result list.-->
+
+<div class="card mb-1" *ngFor="let matchResult of matchResults">
+  <div class="card-block row m-1 col-12">
+    <div class="card-body row align-items-center">
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Match</h6>
+        <a class="card-text" [routerLink]="['/matchResults', matchResult.match]">{{matchResult.match}}</a>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Player</h6>
+        <p class="card-text">{{matchResult.player}}</p>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Result</h6>
+        <p class="card-text">{{matchResult.result}}</p>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Time</h6>
+        <p class="card-text">{{matchResult.time}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalMatchResults"
+                (pageChange)="changePage()"></ngb-pagination>
+
+

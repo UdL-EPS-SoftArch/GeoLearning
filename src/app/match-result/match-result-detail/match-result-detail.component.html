@@ -1,1 +1,28 @@
-<p>match-result-detail works!</p>
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 class="card-title col-md-12 p-3">{{matchResult.id}}</h4>
+    <div class="card-body row m-1">
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Username</h6>
+        <p class="card-text">{{matchResult.player.id}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Match</h6>
+        <p class="card-text">{{matchResult}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Result</h6>
+        <p class="card-text">{{matchResult.result}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Result</h6>
+        <p class="card-text">{{matchResult.time}}</p>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]="['/matchResults']"
+              class="btn m-1 btn-outline-primary">MatchResult List
+      </button>
+    </div>
+  </div>
+</div>

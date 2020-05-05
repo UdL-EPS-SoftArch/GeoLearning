@@ -26,6 +26,16 @@
              [routerLink]="['/contentCreators']"><span class="fa fa-user"></span> List</a>
         </div>
       </li>
+      <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="matchResultDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>MatchResults</a>
+        <div class="dropdown-menu" aria-labelledby="matchResultDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/createMatchResults']"><span class="fa fa-plus-circle"></span> Create MatchResult</a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/matchResults']"><span class="fa fa-user"></span> List</a>
+        </div>
+      </li>
     </ul>
     <ul class="navbar-nav" app-login-navbar></ul>
   </div>

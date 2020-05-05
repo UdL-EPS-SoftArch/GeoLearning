@@ -3,11 +3,14 @@ import { Observable } from 'rxjs/internal/Observable';
 import { RestService } from '@lagoshny/ngx-hal-client';
 import { MatchResult } from './match-result';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class MatchResultService extends RestService<MatchResult> {
 
   constructor(injector: Injector) {
-    super(MatchResult, 'marchResults', injector);
+    super(MatchResult, 'matchResults', injector);
   }
 
   public findByMatch(match: string): Observable<MatchResult[]> {
