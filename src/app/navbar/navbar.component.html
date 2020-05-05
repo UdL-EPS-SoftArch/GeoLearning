@@ -26,6 +26,14 @@
              [routerLink]="['/imageNames']"><span class="fa fa-flag"></span> ImageName</a>
         </div>
       </li>
+      <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="creatorsDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>ContentCreators</a>
+        <div class="dropdown-menu" aria-labelledby="creatorsDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/contentCreators']"><span class="fa fa-user"></span> List</a>
+        </div>
+      </li>
     </ul>
     <ul class="navbar-nav" app-login-navbar></ul>
   </div>

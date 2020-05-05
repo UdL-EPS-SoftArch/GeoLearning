@@ -16,6 +16,7 @@ import { AuthInterceptor } from './login-basic/auth-interceptor';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
 import { ImageNameService } from './games/image-name/image-name.service';
+import { ContentcreatorService } from './content-creator/contentcreator.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -39,6 +40,12 @@ import { ImageNameQuestionEditComponent } from './questions/image-name-questions
 import { ImageNameQuestionCreateComponent } from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
 import { HttpClientService } from './httpClient.service';
 import { ImageNameQuestionDeleteComponent } from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
+import { ContentCreatorListComponent } from './content-creator/content-creator-list/content-creator-list.component';
+import { ContentCreatorDeleteComponent } from './content-creator/content-creator-delete/content-creator-delete.component';
+import { ContentCreatorDetailComponent } from './content-creator/content-creator-detail/content-creator-detail.component';
+import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
+import { ContentCreatorRegisterComponent } from './content-creator/content-creator-register/content-creator-register.component';
+import { ContentCreatorSearchComponent } from './content-creator/content-creator-search/content-creator-search.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +68,12 @@ import { ImageNameQuestionDeleteComponent } from './questions/image-name-questio
     ImageNameQuestionEditComponent,
     ImageNameQuestionCreateComponent,
     ImageNameQuestionDeleteComponent
+    ContentCreatorListComponent,
+    ContentCreatorDeleteComponent,
+    ContentCreatorDetailComponent,
+    ContentCreatorEditComponent,
+    ContentCreatorRegisterComponent,
+    ContentCreatorSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,6 +94,7 @@ import { ImageNameQuestionDeleteComponent } from './questions/image-name-questio
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
     AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, HttpClientService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService
   ],
   bootstrap: [AppComponent]
 })
