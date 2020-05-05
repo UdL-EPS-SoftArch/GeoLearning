@@ -17,6 +17,7 @@ import { AuthenticationBasicService } from './login-basic/authentication-basic.s
 import { PlayerService } from './player/player.service';
 import { ImageNameService } from './games/image-name/image-name.service';
 import { ContentcreatorService } from './content-creator/contentcreator.service';
+import { ImageNameQuestionService } from './questions/image-name-questions/image-name-question.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -35,10 +36,8 @@ import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/i
 import { ImageNameEditComponent } from './games/image-name/image-name-edit/image-name-edit.component';
 import { ImageNameCreateComponent } from './games/image-name/image-name-create/image-name-create.component';
 import { ImageNameQuestionListComponent } from './questions/image-name-questions/image-name-question-list/image-name-question-list.component';
-import { ImageNameQuestionService } from './questions/image-name-questions/image-name-question.service';
 import { ImageNameQuestionEditComponent } from './questions/image-name-questions/image-name-question-edit/image-name-question-edit.component';
 import { ImageNameQuestionCreateComponent } from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
-import { HttpClientService } from './httpClient.service';
 import { ImageNameQuestionDeleteComponent } from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
 import { ContentCreatorListComponent } from './content-creator/content-creator-list/content-creator-list.component';
 import { ContentCreatorDeleteComponent } from './content-creator/content-creator-delete/content-creator-delete.component';
@@ -93,8 +92,8 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService,
-    HttpClientService, ContentcreatorService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, 
+    ContentcreatorService
   ],
   bootstrap: [AppComponent]
 })
