@@ -15,6 +15,7 @@ import { ImageNameEditComponent } from './games/image-name/image-name-edit/image
 import { ImageNameCreateComponent } from './games/image-name/image-name-create/image-name-create.component';
 import { ImageNameQuestionCreateComponent } from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
 import { ImageNameQuestionEditComponent } from './questions/image-name-questions/image-name-question-edit/image-name-question-edit.component';
+import { ImageNameQuestionDeleteComponent } from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: PlayerRegisterComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'imageNames/:id/edit', component: ImageNameEditComponent, canActivate: [LoggedInGuard] },
   { path: 'imageNames-create', component: ImageNameCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'imageNames/:id/addQuestion', component: ImageNameQuestionCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'imageNames/:id/deleteQuestion/:idq', component: ImageNameQuestionDeleteComponent, canActivate: [LoggedInGuard] },
   { path: 'imageNames/:id/editQuestion/:idq', component: ImageNameQuestionEditComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
