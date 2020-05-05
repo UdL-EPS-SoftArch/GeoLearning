@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ImageNameQuestion } from '../imageNameQuestion';
 import { ImageNameQuestionServiceExtended } from '../image-name-question.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-image-name-question-delete',
@@ -14,7 +15,7 @@ export class ImageNameQuestionDeleteComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private imageNameQuestionServiceExtended: ImageNameQuestionServiceExtended,
-              private router: Router) { }
+              private _location: Location) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -27,9 +28,13 @@ export class ImageNameQuestionDeleteComponent implements OnInit {
   delete() {
     this.imageNameQuestionServiceExtended.delete(this.imageNameQuestion).subscribe(
       () => {
-        this.router.navigate(['/imageNames/' + this.id]);
+        this.back();
       }
     );
+  }
+
+  back(): void {
+    this._location.back();
   }
 
 }
