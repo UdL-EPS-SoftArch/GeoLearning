@@ -1,60 +1,29 @@
-import { Location } from '@angular/common';
-import { Component, OnInit, Injectable } from '@angular/core';
-import {ImageOptionQuestion} from '../imageOptionQuestion';
+import { ImageOptionQuestion } from 'src/app/questions/image-option-question/ImageOptionQuestion';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ImageOptionQuestionService } from '../image-option-question.service';
-import get = Reflect.get;
-import {ImageOption} from "../../../games/image-option/imageOption";
-import {ImageOptionService} from "../../../games/image-option/image-option.service";
-
 
 @Component({
-  selector: 'app-image-option-question-create',
+  selector: 'app-image-option-question-list',
   templateUrl: './image-option-question-list.component.html'
 })
 export class ImageOptionQuestionListComponent implements OnInit {
 
+
   public imageOptionQuestions: ImageOptionQuestion[] = [];
-  public pageSize = 5;
-  public page = 1;
-  public totalImageOptionQuestions = 0;
   constructor( private router: ActivatedRoute,
                private routers: Router,
-               private imageOptionQuestionService: ImageOptionQuestionService,
-               private imageOptionService: ImageOptionService,
-               private location: Location) { }
+               private imageOptionQuestionService: ImageOptionQuestionService) { }
+
 
   ngOnInit(): void {
     const id = this.router.snapshot.paramMap.get('id');
-    const uri: string = "/"+id+"/questions";
-    this.imageOptionService.customQuery(uri, {size: this.pageSize}).subscribe(
-      () => {
-        this.totalImageOptionQuestions = this.imageOptionQuestionService.totalElement();
+    const uri: string = "imageOptions/" + id + "/questions"
+    this.imageOptionQuestionService.customQuery(uri).subscribe(
+      (imageOptionsQuestions ) => {
+        this.imageOptionQuestions = imageOptionsQuestions;
       }
     )
-    /*this.imageOptionQuestionService.getAll({size: this.pageSize}).subscribe(
-      (imageOptionQuestions: ImageOptionQuestion[]) => {
-        this.imageOptionQuestions = imageOptionQuestions;
-        this.totalImageOptionQuestions = this.imageOptionQuestionService.totalElement();
-      });*/
   }
 
-  public onSubmit(): void {
-    //this.routers.navigate(['/image-option-question/'+this.getId()+"/add"]); // ruta API-post
-  }
-
-  changePage() {
-    this.imageOptionQuestionService.page(this.page - 1).subscribe(
-      (imageOptionQuestions: ImageOptionQuestion[]) => this.imageOptionQuestions = imageOptionQuestions);
-  }
-
-
-  getId() {
-    const id = this.router.snapshot.paramMap.get('id');
-    return id;
-
-  }
-  goBack() {
-    this.location.back();
-  }
 }

@@ -6,6 +6,16 @@ import { ImageOptionQuestion } from './imageOptionQuestion';
 export class ImageOptionQuestionService extends RestService<ImageOptionQuestion> {
 
   constructor(injector: Injector) {
+    super(ImageOptionQuestion, '', injector);
+  }
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ImageOptionQuestionServiceExtended extends RestService<ImageOptionQuestion> {
+
+  constructor(injector: Injector) {
     super(ImageOptionQuestion, 'imageOptionQuestions', injector);
   }
 }

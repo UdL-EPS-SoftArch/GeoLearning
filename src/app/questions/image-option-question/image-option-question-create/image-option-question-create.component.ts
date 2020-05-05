@@ -2,9 +2,8 @@ import { Location } from '@angular/common';
 import { Component, OnInit, Injectable } from '@angular/core';
 import {ImageOptionQuestion} from '../imageOptionQuestion';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ImageOptionQuestionService } from '../image-option-question.service';
+import { ImageOptionQuestionServiceExtended } from '../image-option-question.service';
 import {ImageOptionService} from "../../../games/image-option/image-option.service";
-import {ImageOption} from "../../../games/image-option/imageOption";
 
 
 @Component({
@@ -14,13 +13,10 @@ import {ImageOption} from "../../../games/image-option/imageOption";
 export class ImageOptionQuestionCreateComponent implements OnInit {
 
   public imageOptionQuestion: ImageOptionQuestion;
-  public imageOption: ImageOption = new ImageOption();
 
   constructor( private router: Router,
                private Router: ActivatedRoute,
-               private imageOptionQuestionService: ImageOptionQuestionService,
-               private imageOptionService: ImageOptionService,
-               private location: Location) { }
+               private imageOptionQuestionService: ImageOptionQuestionServiceExtended) { }
 
   ngOnInit() {
     this.imageOptionQuestion = new ImageOptionQuestion();
@@ -30,16 +26,12 @@ export class ImageOptionQuestionCreateComponent implements OnInit {
   public onSubmit(): void {
     const id = this.Router.snapshot.paramMap.get('id');
 
-    this.imageOptionService.get(id).subscribe((imageOption: ImageOption) => {
-      this.imageOption = imageOption;
-      imageOption.getRelation(ImageOption, 'game_id').subscribe(() => this.imageOption.questions.push(this.imageOptionQuestion))
-      console.log(imageOption)
-    });
-
-    this.imageOptionQuestionService.create(this.imageOptionQuestion).subscribe(() => this.location.back());
+    var imageOptionUri: string = "imageOptions/" + id;
+    this.imageOptionQuestion.imageOption = imageOptionUri;
+    this.imageOptionQuestionService.create(this.imageOptionQuestion).subscribe(
+      () => {
+        this.router.navigate([imageOptionUri]);
+      }
+    )
   }
-  /*this.teamService.get(id).subscribe((team: Team) => {
-  this.team = team;
-  team.getRelation(Player, 'leader').subscribe((leader: Player) => this.team.leader = leader);
-});*/
 }

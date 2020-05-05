@@ -24,7 +24,7 @@ export class ImageOptionCreateComponent implements OnInit {
   onSubmit(): void {
     this.imageOptionService.create(this.imageOption).subscribe(
       (imageOption: ImageOption) => {
-        this.router.navigate(['/image-option-question/'+this.getId()]);
+        this.router.navigate(['/imageOptions/'+this.getId()]);
       }
     )
   }

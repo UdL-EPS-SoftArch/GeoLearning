@@ -1,9 +1,8 @@
 import { Resource } from '@lagoshny/ngx-hal-client';
-import { ImageOption } from '../../games/image-option/imageOption';
 
 export class ImageOptionQuestion extends Resource {
   ioq_id: Number;
-  imageOption: ImageOption;
+  imageOption: String;
   image: String;
   solution: String;
   optionA: String;

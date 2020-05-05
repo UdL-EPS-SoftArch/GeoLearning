@@ -1,52 +1,40 @@
-<h2>Questions</h2>
-<form id="image-option-question-list" (ngSubmit)="onSubmit()" #form="ngForm">
-  <div class="card mb-1" *ngFor="let imageOptionQuestion of imageOptionQuestions;">
-    <div class="card-block row m-1 col-12">
-      <div class="card-body row align-items-center">
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">Uri</h6>
-          <a class="card-text" >{{imageOptionQuestion.uri}}</a>
-        </div>
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">Image</h6>
-          <p class="card-text">{{imageOptionQuestion.image}}</p>
-        </div>
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">OptionA</h6>
-          <p class="card-text">{{imageOptionQuestion.optionA}}</p>
-        </div>
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">OptionB</h6>
-          <p class="card-text">{{imageOptionQuestion.optionB}}</p>
-        </div>
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">OptionC</h6>
-          <p class="card-text">{{imageOptionQuestion.optionC}}</p>
-        </div>
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">OptionD</h6>
-          <p class="card-text">{{imageOptionQuestion.optionD}}</p>
-        </div>
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">OptionE</h6>
-          <p class="card-text">{{imageOptionQuestion.optionE}}</p>
-        </div>
-        <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">Solution</h6>
-          <p class="card-text">{{imageOptionQuestion.solution}}</p>
-        </div>
+<div class="card mb-1" *ngFor="let imageOptionQuestion of imageOptionQuestions;">
+  <div class="card-block row m-1 col-auto">
+    <div class="card-body row align-items-center">
+      <div class="col-1 m-1">
+        <h6 class="card-subtitle text-muted">Image</h6>
+        <!-- <img src="{{getImage(imageNameQuestion.image)}}" width="100"> -->
+      </div>
+      <div class="col-2 m-1">
+        <h6 class="card-subtitle text-muted">OptionA</h6>
+        <p class="card-text">{{imageOptionQuestion.optionA}}</p>
+
+        <h6 class="card-subtitle text-muted">OptionB</h6>
+        <p class="card-text">{{imageOptionQuestion.optionB}}</p>
+      </div>
+      <div class="col-2 m-1">
+        <h6 class="card-subtitle text-muted">OptionC</h6>
+        <p class="card-text">{{imageOptionQuestion.optionC}}</p>
+        <h6 class="card-subtitle text-muted">OptionD</h6>
+        <p class="card-text">{{imageOptionQuestion.optionD}}</p>
+      </div>
+      <div class="col-2 m-1">
+
+        <h6 class="card-subtitle text-muted">OptionE</h6>
+        <p class="card-text">{{imageOptionQuestion.optionE}}</p>
+
+        <h6 class="card-subtitle text-muted"><strong>Solution</strong></h6>
+        <p class="card-text">{{imageOptionQuestion.solution}}</p>
+      </div>
+      <div class="col-auto m-1">
+        <button id="editBtn" type="button" [routerLink]="['editQuestion', imageOptionQuestion.ioq_id]"
+                class="btn m-1 btn-outline-success">Edit
+        </button>
+        <button id="deleteBtn" type="button" [routerLink]="['deleteQuestion', imageOptionQuestion.ioq_id]"
+                class="btn m-1 btn-outline-danger">Delete
+        </button>
       </div>
     </div>
   </div>
-  <fieldset>
-    <!-- Button -->
-    <div class="form-group">
-      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Create</button> <!--ruta de creació-->
-      <button id="addBtn" type="button" [routerLink]="['/image-option-question/'+getId()+'/add']" class="btn m-1 btn-outline-primary pull-right">Add question</button>
-    </div>
-  </fieldset>
-  <ngb-pagination class="d-flex justify-content-center"
-                  [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalImageOptionQuestions"
-                  (pageChange)="changePage()"></ngb-pagination>
-</form>
+</div>
 
