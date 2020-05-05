@@ -11,7 +11,7 @@ import { PlayerRegisterComponent } from './player/player-register/player-registe
 import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
 import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
 import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
-import {ImageOptionQuestionCreateComponent} from "./questions/image-option-question/image-option-question-create/image-option-question-create.component";
+import {ImageOptionQuestionCreateComponent} from './questions/image-option-question/image-option-question-create/image-option-question-create.component';
 
 
 
@@ -27,7 +27,6 @@ const routes: Routes = [
   { path: 'imageOptions/new', component: ImageOptionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'imageOptions/:id/addQuestion', component: ImageOptionQuestionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'imageOptions/:id', component: ImageOptionDetailComponent, canActivate: [LoggedInGuard] },
-  //{ path: 'imageOptions/:id/edit', component: ImageOptionEditComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },

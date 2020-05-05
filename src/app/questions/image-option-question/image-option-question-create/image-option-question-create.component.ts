@@ -1,9 +1,7 @@
-import { Location } from '@angular/common';
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {ImageOptionQuestion} from '../imageOptionQuestion';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ImageOptionQuestionServiceExtended } from '../image-option-question.service';
-import {ImageOptionService} from "../../../games/image-option/image-option.service";
 
 
 @Component({
@@ -15,7 +13,7 @@ export class ImageOptionQuestionCreateComponent implements OnInit {
   public imageOptionQuestion: ImageOptionQuestion;
 
   constructor( private router: Router,
-               private Router: ActivatedRoute,
+               private activatedRoute: ActivatedRoute,
                private imageOptionQuestionService: ImageOptionQuestionServiceExtended) { }
 
   ngOnInit() {
@@ -24,9 +22,9 @@ export class ImageOptionQuestionCreateComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    const id = this.Router.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
 
-    var imageOptionUri: string = "imageOptions/" + id;
+    const imageOptionUri: string = 'imageOptions/' + id;
     this.imageOptionQuestion.imageOption = imageOptionUri;
     this.imageOptionQuestionService.create(this.imageOptionQuestion).subscribe(
       () => {

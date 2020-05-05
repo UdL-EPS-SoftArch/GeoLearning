@@ -29,13 +29,12 @@ import { NotFoundComponent } from './error-handler/error-alert/not-found.compone
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
 import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
-//import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
 
 import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
-import {ImageOptionService} from "./games/image-option/image-option.service";
-import {ImageOptionQuestionService} from "./questions/image-option-question/image-option-question.service";
-import {ImageOptionQuestionCreateComponent} from "./questions/image-option-question/image-option-question-create/image-option-question-create.component";
-import {ImageOptionQuestionListComponent} from "./questions/image-option-question/image-option-question-list/image-option-question-list.component";
+import {ImageOptionService} from './games/image-option/image-option.service';
+import {ImageOptionQuestionService} from './questions/image-option-question/image-option-question.service';
+import {ImageOptionQuestionCreateComponent} from './questions/image-option-question/image-option-question-create/image-option-question-create.component';
+import {ImageOptionQuestionListComponent} from './questions/image-option-question/image-option-question-list/image-option-question-list.component';
 
 
 
@@ -51,7 +50,6 @@ import {ImageOptionQuestionListComponent} from "./questions/image-option-questio
     PlayerDeleteComponent,
     PlayerEditComponent,
     PlayerSearchComponent,
-    //ImageOptionEditComponent,
     ImageOptionDetailComponent,
     NotFoundComponent,
     ImageOptionListComponent,

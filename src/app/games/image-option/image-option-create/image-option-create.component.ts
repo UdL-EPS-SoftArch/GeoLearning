@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ImageOptionService } from '../image-option.service';
 import { Location } from '@angular/common';
-import {ImageOption} from "../imageOption";
+import {ImageOption} from '../imageOption';
 import get = Reflect.get;
 
 @Component({
@@ -29,8 +29,8 @@ export class ImageOptionCreateComponent implements OnInit {
     )
   }
   getId() {
-    var uri = this.imageOption.uri.toString();
-    var splitted = uri.split('/');
+    const uri = this.imageOption.uri.toString();
+    const splitted = uri.split('/');
     return splitted[2];
   }
   goBack() {
