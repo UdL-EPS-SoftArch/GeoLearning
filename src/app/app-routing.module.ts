@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'imageOptions/new', component: ImageOptionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'imageOptions/:id/addQuestion', component: ImageOptionQuestionCreateComponent, canActivate: [LoggedInGuard] },
   { path: 'imageOptions/:id', component: ImageOptionDetailComponent, canActivate: [LoggedInGuard] },
-  //{ path: 'image-option-games/:id/edit', component: ImageOptionEditComponent, canActivate: [LoggedInGuard] },
+  //{ path: 'imageOptions/:id/edit', component: ImageOptionEditComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
