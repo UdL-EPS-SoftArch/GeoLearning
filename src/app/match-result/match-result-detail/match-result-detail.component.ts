@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatchResult} from '../match-result';
 import {MatchResultService} from '../match-result.service';
+import {Player} from "../../player/player";
+import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
+import {User} from "../../login-basic/user";
+
 // import {Match} from '../match/match';
 
 @Component({
@@ -12,16 +16,15 @@ import {MatchResultService} from '../match-result.service';
 export class MatchResultDetailComponent implements OnInit {
   public matchResult: MatchResult = new MatchResult();
 
-  constructor(private router: Router,
-              private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
               private matchResultService: MatchResultService) {
   }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.matchResultService.get(id).subscribe((matchResult: MatchResult) => {
+    this.matchResultService.get(id).subscribe(matchResult => {
       this.matchResult = matchResult;
-     // matchResult.getRelation(Match, 'match').subscribe((match: Match) => this.matchResult.match = match);
+      matchResult.getRelation(Player, 'player').subscribe(player => this.matchResult.player = player);
     });
   }
 

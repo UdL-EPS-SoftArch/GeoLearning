@@ -30,7 +30,7 @@ export class MatchResultCreateComponent implements OnInit {
 
   onSubmit() {
     this.matchResultService.create(this.matchResult).subscribe(
-      (matchResult: MatchResult) => this.router.navigate(['/matchResults']));
+      (matchResult: MatchResult) => this.router.navigate([matchResult.uri]));
   }
 }
 

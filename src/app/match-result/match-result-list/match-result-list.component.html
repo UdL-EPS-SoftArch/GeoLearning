@@ -5,7 +5,7 @@
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Player</h6>
-        <a class="card-text" [routerLink]="['/matchResults', matchResult.player]">{{matchResult.player}}</a>
+        <p class="card-text">{{matchResult.player}}</p>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Match</h6>
@@ -13,7 +13,7 @@
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Result</h6>
-        <a class="card-text" [routerLink]="['/matchResults', matchResult.result]">{{matchResult.result}}</a>
+        <a class="card-text" [routerLink]="[matchResult.uri]">{{matchResult.result}}</a>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Time</h6>
