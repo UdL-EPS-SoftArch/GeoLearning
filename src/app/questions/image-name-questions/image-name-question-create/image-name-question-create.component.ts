@@ -23,7 +23,7 @@ export class ImageNameQuestionCreateComponent implements OnInit {
 
   onSubmit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    var imageNameUri: string = "/imageNames/" + id;
+    const imageNameUri: string = '/imageNames/' + id;
     this.imageNameQuestion.imageName = imageNameUri;
     this.imageNameQuestionServiceExtended.create(this.imageNameQuestion).subscribe(
       () => {

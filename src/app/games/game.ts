@@ -1,8 +1,8 @@
 import { Resource } from '@lagoshny/ngx-hal-client';
 
 export class Game extends Resource {
-    uri: String;
-    instructions: String;
+    uri: string;
+    instructions: string;
 
     constructor(values: object = {}) {
         super();

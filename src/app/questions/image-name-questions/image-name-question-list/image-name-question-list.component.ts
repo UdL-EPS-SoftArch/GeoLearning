@@ -20,7 +20,7 @@ export class ImageNameQuestionListComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    const uri: string = "imageNames/" + id + "/questions"
+    const uri: string = 'imageNames/' + id + '/questions'
     this.imageNameQuestionsService.customQuery(uri).subscribe(
       (imageNameQuestions: ImageNameQuestion[]) => {
         this.imageNameQuestions = imageNameQuestions;
@@ -37,8 +37,8 @@ export class ImageNameQuestionListComponent implements OnInit {
   }
 
   getBase64ImageFromURL(url: string) {
-    return Observable.create((observer: Observer<string>) => {
-      let img = new Image();
+    return new Observable((observer: Observer<string>) => {
+      const img = new Image();
       img.crossOrigin = 'Anonymous';
       img.src = url;
       if (!img.complete) {
@@ -57,14 +57,14 @@ export class ImageNameQuestionListComponent implements OnInit {
   }
 
   getBase64Image(img: HTMLImageElement) {
-    var canvas = document.createElement("canvas");
+    const canvas = document.createElement('canvas');
     canvas.width = img.width;
     canvas.height = img.height;
-    var ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0);
-    var dataURL = canvas.toDataURL("image/png");
+    const dataURL = canvas.toDataURL('image/png');
     console.log(dataURL);
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
   }
 
 }

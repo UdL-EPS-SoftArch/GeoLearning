@@ -92,8 +92,7 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, 
-    ContentcreatorService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, ContentcreatorService
   ],
   bootstrap: [AppComponent]
 })
