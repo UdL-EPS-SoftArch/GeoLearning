@@ -15,7 +15,9 @@ import { AuthInterceptor } from './login-basic/auth-interceptor';
 
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
+import { ImageNameService } from './games/image-name/image-name.service';
 import { ContentcreatorService } from './content-creator/contentcreator.service';
+import { ImageNameQuestionService } from './questions/image-name-questions/image-name-question.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -28,6 +30,15 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
 import { PlayerSearchComponent } from './player/player-search/player-search.component';
 import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImageNameListComponent } from './games/image-name/image-name-list/image-name-list.component';
+import { ImageNameDetailComponent } from './games/image-name/image-name-detail/image-name-detail.component';
+import { ImageNameDeleteComponent } from './games/image-name/image-name-delete/image-name-delete.component';
+import { ImageNameEditComponent } from './games/image-name/image-name-edit/image-name-edit.component';
+import { ImageNameCreateComponent } from './games/image-name/image-name-create/image-name-create.component';
+import { ImageNameQuestionListComponent } from './questions/image-name-questions/image-name-question-list/image-name-question-list.component';
+import { ImageNameQuestionEditComponent } from './questions/image-name-questions/image-name-question-edit/image-name-question-edit.component';
+import { ImageNameQuestionCreateComponent } from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
+import { ImageNameQuestionDeleteComponent } from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
 import { ContentCreatorListComponent } from './content-creator/content-creator-list/content-creator-list.component';
 import { ContentCreatorDeleteComponent } from './content-creator/content-creator-delete/content-creator-delete.component';
 import { ContentCreatorDetailComponent } from './content-creator/content-creator-detail/content-creator-detail.component';
@@ -47,6 +58,15 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     PlayerEditComponent,
     PlayerSearchComponent,
     NotFoundComponent,
+    ImageNameListComponent,
+    ImageNameDetailComponent,
+    ImageNameDeleteComponent,
+    ImageNameEditComponent,
+    ImageNameCreateComponent,
+    ImageNameQuestionListComponent,
+    ImageNameQuestionEditComponent,
+    ImageNameQuestionCreateComponent,
+    ImageNameQuestionDeleteComponent,
     ContentCreatorListComponent,
     ContentCreatorDeleteComponent,
     ContentCreatorDetailComponent,
@@ -72,7 +92,7 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, ContentcreatorService
   ],
   bootstrap: [AppComponent]
 })
