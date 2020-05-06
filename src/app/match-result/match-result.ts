@@ -9,7 +9,7 @@ export class MatchResult extends Resource {
   time: number;
 
   match: Match;
-  player: Player;
+  player: any;
 
   constructor() {
     super();

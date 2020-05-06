@@ -5,8 +5,10 @@
     <!-- Player input -->
     <div class="form-group" [class.was-validated]="player.dirty || player.touched">
       <label class="control-label" for="player">Player:</label>
-      <input id="player" name="player" type="text" class="form-control" required
+      <select id="player" name="player" type="text" class="form-control" required
              [(ngModel)]="matchResult.player" #player="ngModel">
+        <option *ngFor="let player of players" [value]="player.uri">{{player.id}}</option>
+      </select>
       <div class="invalid-feedback">A Player is required</div>
     </div>
 

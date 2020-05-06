@@ -4,16 +4,16 @@
   <div class="card-block row m-1 col-12">
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Match</h6>
-        <a class="card-text" [routerLink]="['/matchResults', matchResult.match]">{{matchResult.match}}</a>
+        <h6 class="card-subtitle text-muted">Player</h6>
+        <a class="card-text" [routerLink]="['/matchResults', matchResult.player]">{{matchResult.player}}</a>
       </div>
       <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Player</h6>
-        <p class="card-text">{{matchResult.player}}</p>
+        <h6 class="card-subtitle text-muted">Match</h6>
+        <p class="card-text">{{matchResult.match}}</p>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Result</h6>
-        <p class="card-text">{{matchResult.result}}</p>
+        <a class="card-text" [routerLink]="['/matchResults', matchResult.result]">{{matchResult.result}}</a>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Time</h6>

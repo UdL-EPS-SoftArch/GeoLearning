@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {MatchResult} from '../match-result';
 import {MatchResultService} from '../match-result.service';
 import {Sort} from '@lagoshny/ngx-hal-client';
+import {Player} from "../../player/player";
 
 
 @Component({
@@ -25,7 +26,6 @@ export class MatchResultListComponent implements OnInit {
     this.matchResultsService.getAll({size: this.pageSize, sort: this.sorting}).subscribe(
       (matchResults: MatchResult[]) => {
         this.matchResults = matchResults;
-        this.matchResults
         this.totalMatchResults = this.matchResultsService.totalElement();
       });
   }
