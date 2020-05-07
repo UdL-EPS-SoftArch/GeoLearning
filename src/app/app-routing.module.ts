@@ -12,7 +12,7 @@ import { ImageOptionListComponent } from './games/image-option/image-option-list
 import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
 import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
 import {ImageOptionQuestionCreateComponent} from './questions/image-option-question/image-option-question-create/image-option-question-create.component';
-
+import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
 
 
 
@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
+  { path: 'imageOptions/:id/edit', component: ImageOptionEditComponent, canActivate: [LoggedInGuard] },
 ];
 
 @NgModule({

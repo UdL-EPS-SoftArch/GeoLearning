@@ -161,5 +161,8 @@
     "@schematics/angular:service": {
       "skipTests": true
     }
+  },
+  "cli": {
+    "analytics": "9480775a-fdb6-40ef-8afc-102d7c769e66"
   }
 }
