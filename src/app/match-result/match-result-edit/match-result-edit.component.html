@@ -1,0 +1,50 @@
+<h2>Create MatchResult</h2>
+<form id="match-result-edit" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <!-- Player input -->
+    <div class="form-group" [class.was-validated]="player.dirty || player.touched">
+      <label class="control-label" for="player">Player:</label>
+      <select id="player" name="player" type="text" class="form-control" required
+              [(ngModel)]="matchResult.player" #player="ngModel">
+        <option *ngFor="let player of players" [value]="player.uri">{{player.id}}</option>
+      </select>
+      <div class="invalid-feedback">A Player is required</div>
+    </div>
+
+    <!-- Match input -->
+    <!--<div class="form-group" [class.was-validated]="match.dirty || match.touched">
+      <label class="control-label" for="match">Match:</label>
+      <select id="match" name="match" type="text" class="form-control" required
+              [(ngModel)]="matchResult.match" #match="ngModel">
+        <option *ngFor="let match of matches" [value]="match.uri">{{match.id}}</option>
+      </select>
+      <div class="invalid-feedback">A Match is required</div>
+    </div>-->
+
+    <!-- Result input -->
+    <div class="form-group" [class.was-validated]="result.dirty || result.touched">
+      <label class="control-label" for="result">Result:</label>
+      <input id="result" name="result" type="number" class="form-control" required
+             [(ngModel)]="matchResult.result" #result="ngModel">
+      <div class="invalid-feedback">A Result is required</div>
+    </div>
+
+    <!-- Time input -->
+    <div class="form-group" [class.was-validated]="time.dirty || time.touched">
+      <label class="control-label" for="time">Time:</label>
+      <input id="time" name="time" type="text" class="form-control" required
+             [(ngModel)]="matchResult.time" #time="ngModel">
+      <div class="invalid-feedback">A Time is required</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Edit
+      </button>
+      <button id="listBtn" type="button" [routerLink]="[matchResult.uri]" class="btn m-1 btn-outline-primary pull-right">Back
+      </button>
+    </div>
+
+  </fieldset>
+</form>
