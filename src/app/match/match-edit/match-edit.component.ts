@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MatchService} from "../match.service";
 import {Location} from '@angular/common';
 
+
 @Component({
   selector: 'app-match-edit',
   templateUrl: './match-edit.component.html',
