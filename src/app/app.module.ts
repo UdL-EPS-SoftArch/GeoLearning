@@ -18,6 +18,7 @@ import { PlayerService } from './player/player.service';
 import { ImageNameService } from './games/image-name/image-name.service';
 import { ContentcreatorService } from './content-creator/contentcreator.service';
 import { ImageNameQuestionService } from './questions/image-name-questions/image-name-question.service';
+import { MatchService } from "./match/match.service";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -45,6 +46,9 @@ import { ContentCreatorDetailComponent } from './content-creator/content-creator
 import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
 import { ContentCreatorRegisterComponent } from './content-creator/content-creator-register/content-creator-register.component';
 import { ContentCreatorSearchComponent } from './content-creator/content-creator-search/content-creator-search.component';
+import { MatchCreateComponent } from './match/match-create/match-create.component';
+import { MatchListComponent } from './match/match-list/match-list.component';
+import { MatchDetailComponent } from './match/match-detail/match-detail.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +77,9 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     ContentCreatorEditComponent,
     ContentCreatorRegisterComponent,
     ContentCreatorSearchComponent,
+    MatchCreateComponent,
+    MatchListComponent,
+    MatchDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +99,7 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, ContentcreatorService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, ContentcreatorService, MatchService
   ],
   bootstrap: [AppComponent]
 })

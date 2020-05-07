@@ -21,6 +21,9 @@ import { ImageNameQuestionEditComponent } from './questions/image-name-questions
 import { ImageNameQuestionDeleteComponent } from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
 import { ContentCreatorListComponent } from './content-creator/content-creator-list/content-creator-list.component';
 import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
+import {MatchCreateComponent} from "./match/match-create/match-create.component";
+import {MatchListComponent} from "./match/match-list/match-list.component";
+import {MatchDetailComponent} from "./match/match-detail/match-detail.component";
 
 const routes: Routes = [
   { path: 'registerContentCreator', component: ContentCreatorRegisterComponent},
@@ -41,6 +44,9 @@ const routes: Routes = [
   { path: 'contentCreators/:id/edit', component: ContentCreatorEditComponent, canActivate: [LoggedInGuard] },
   { path: 'contentCreators/:id', component: ContentCreatorDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'contentCreators', component: ContentCreatorListComponent, canActivate: [LoggedInGuard] },
+  { path: 'createMatch', component: MatchCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'matches', component: MatchListComponent, canActivate: [LoggedInGuard] },
+  { path: 'matches/:id', component: MatchDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
