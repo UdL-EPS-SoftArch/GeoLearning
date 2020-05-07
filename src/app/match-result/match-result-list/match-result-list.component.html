@@ -5,15 +5,16 @@
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Player</h6>
-        <p class="card-text">{{matchResult.player}}</p>
+        <a class="card-text" [routerLink]="[matchResult.uri]">{{matchResult.player.id}}</a>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Match</h6>
-        <p class="card-text">{{matchResult.match}}</p>
+        <!--<p class="card-text">{{matchResult.match.id}}</p>-->
       </div>
+      <br><br>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Result</h6>
-        <a class="card-text" [routerLink]="[matchResult.uri]">{{matchResult.result}}</a>
+        <p class="card-text">{{matchResult.result}}</p>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Time</h6>
