@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatchResult} from '../match-result';
 import {MatchResultService} from '../match-result.service';
-import {Player} from "../../player/player";
+import {Player} from '../../player/player';
 // import {Match} from '../../match/match';
 
 @Component({
@@ -22,7 +22,7 @@ export class MatchResultDetailComponent implements OnInit {
     this.matchResultService.get(id).subscribe(matchResult => {
       this.matchResult = matchResult;
       matchResult.getRelation(Player, 'player').subscribe(player => this.matchResult.player = player);
-      //matchResult.getRelation(Match, 'match').subscribe(match => this.matchResult.match = match);
+      // matchResult.getRelation(Match, 'match').subscribe(match => this.matchResult.match = match);
     });
   }
 

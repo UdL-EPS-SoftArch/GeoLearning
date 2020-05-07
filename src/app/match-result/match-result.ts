@@ -1,6 +1,5 @@
 import {Resource} from '@lagoshny/ngx-hal-client';
-import {Player} from '../player/player';
-import {Match} from '../match/match'
+
 
 export class MatchResult extends Resource {
   uri: string;
@@ -8,7 +7,7 @@ export class MatchResult extends Resource {
   result: number;
   time: number;
 
-  match: Match;
+  match: any;
   player: any;
 
   constructor() {

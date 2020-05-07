@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {MatchResult} from '../match-result';
 import {MatchResultService} from '../match-result.service';
 import {Sort} from '@lagoshny/ngx-hal-client';
-import {Player} from "../../player/player";
+import {Player} from '../../player/player';
 // import {Match} from '../../match/match';
 
 @Component({
@@ -27,7 +27,7 @@ export class MatchResultListComponent implements OnInit {
       (matchResults: MatchResult[]) => {
         this.matchResults = matchResults;
         this.matchResults.map(matchResult => matchResult.getRelation(Player, 'player').subscribe(player => matchResult.player = player));
-        //this.matchResults.map(matchResult => matchResult.getRelation(Match, 'match').subscribe(match => matchResult.match = match));
+        // this.matchResults.map(matchResult => matchResult.getRelation(Match, 'match').subscribe(match => matchResult.match = match));
         this.totalMatchResults = this.matchResultsService.totalElement();
       });
   }
