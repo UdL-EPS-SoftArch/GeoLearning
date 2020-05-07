@@ -35,8 +35,14 @@ import { ContentCreatorDetailComponent } from './content-creator/content-creator
 import { ContentCreatorEditComponent } from './content-creator/content-creator-edit/content-creator-edit.component';
 import { ContentCreatorRegisterComponent } from './content-creator/content-creator-register/content-creator-register.component';
 import { ContentCreatorSearchComponent } from './content-creator/content-creator-search/content-creator-search.component';
+
 import { ImageImageCreateComponent } from './games/image-image/image-image-create/image-image-create.component';
 import { ImageImageListComponent } from './games/image-image/image-image-list/image-image-list.component';
+import { ImageImageQuestionService } from './questions/image-image-question/image-image-question.service';
+import { ImageImageQuestionCreateComponent } from './questions/image-image-question/image-image-question-create/image-image-question-create.component';
+import { ImageImageQuestionListComponent } from './questions/image-image-question/image-image-question-list/image-image-question-list.component';
+
+
 
 @NgModule({
   declarations: [
@@ -58,6 +64,8 @@ import { ImageImageListComponent } from './games/image-image/image-image-list/im
     ContentCreatorSearchComponent,
     ImageImageCreateComponent,
     ImageImageListComponent,
+    ImageImageQuestionCreateComponent,
+    ImageImageQuestionListComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +85,7 @@ import { ImageImageListComponent } from './games/image-image/image-image-list/im
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService, ImageImageService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService, ImageImageService, ImageImageQuestionService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,9 @@
 
-<h2>Create a new Image Option game</h2>
+<h2>Create a new Image Image game</h2>
 <form id="image-image-create" (ngSubmit)="onSubmit()" #form="ngForm">
   <fieldset>
 
-    <!-- ImageOption instructions input -->
+    <!-- ImageImage instructions input -->
     <div class="form-group" [class.was-validated]="name.dirty || name.touched">
       <label class="control-label" for="name"><strong>Instructions:</strong></label>
       <input id="name" name="name" type="text" class="form-control" required
@@ -14,7 +14,7 @@
 
     <!-- Button -->
     <div class="form-group">
-      <button id="submit" type="submit" [routerLink]= "['']" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Next</button> <!--ruta de creació-->
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Next</button> <!--ruta de creació-->
       <button id="listBtn" type="button" [routerLink]="['']" class="btn m-1 btn-outline-primary pull-right">Back</button>
     </div>
 
