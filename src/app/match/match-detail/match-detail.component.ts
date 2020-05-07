@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Match} from "../match";
-import {Router, ActivatedRoute} from "@angular/router";
-import {MatchService} from "../match.service";
-import {ContentCreator} from "../../content-creator/contentCreator";
+import {Match} from '../match';
+import {Router, ActivatedRoute} from '@angular/router';
+import {MatchService} from '../match.service';
+import {ContentCreator} from '../../content-creator/contentCreator';
 
 @Component({
   selector: 'app-match-detail',

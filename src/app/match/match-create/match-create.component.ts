@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Match} from "../match";
-import {MatchService} from "../match.service";
-import {Router} from "@angular/router";
-import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
-import {ContentCreator} from "../../content-creator/contentCreator";
+import {Match} from '../match';
+import {MatchService} from '../match.service';
+import {Router} from '@angular/router';
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
+import {ContentCreator} from '../../content-creator/contentCreator';
 
 @Component({
   selector: 'app-match-create',

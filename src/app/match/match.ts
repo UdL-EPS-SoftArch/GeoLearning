@@ -1,6 +1,6 @@
 import {Resource} from '@lagoshny/ngx-hal-client';
-import {ContentCreator} from "../content-creator/contentCreator";
-import {Game} from "../games/game"
+import {ContentCreator} from '../content-creator/contentCreator';
+import {Game} from '../games/game'
 
 export class Match extends Resource{
   id: number;
@@ -12,12 +12,7 @@ export class Match extends Resource{
 
   uri: string;
 
-  constructor(/*values: object = {}*/) {
+  constructor() {
     super();
-    //Object.assign(this as any, values);
   }
-
-  /*public setCreator(creator: ContentCreator){
-    this.creator = creator;
-  }*/
 }

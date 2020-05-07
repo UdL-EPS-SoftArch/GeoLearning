@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {MatchService} from "../match.service";
-import {Match} from "../match";
-import {Sort} from "@lagoshny/ngx-hal-client";
+import {Router} from '@angular/router';
+import {MatchService} from '../match.service';
+import {Match} from '../match';
+import {Sort} from '@lagoshny/ngx-hal-client';
 
 @Component({
   selector: 'app-match-list',
