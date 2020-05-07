@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Router} from '@angular/router';
-import {ContentcreatorService} from '../contentcreator.service';
-import {ContentCreator} from '../contentCreator';
-import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
-import {User} from '../../login-basic/user';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { ContentcreatorService } from '../contentcreator.service';
+import { ContentCreator } from '../contentCreator';
+import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
+import { User } from '../../login-basic/user';
 
 @Component({
   selector: 'app-content-creator-edit',
@@ -26,8 +26,8 @@ export class ContentCreatorEditComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.contentcreator.password = this.contentcreator.passwordReset
-      ? this.contentcreator.password : undefined; // Don't edit if not a reset
+    this.contentcreator.password =
+      this.contentcreator.passwordReset ? this.contentcreator.password : undefined; // Don't edit if not a reset
     this.contentCreatorService.patch(this.contentcreator).subscribe(
       (contentcreator: ContentCreator) => {
         if (this.contentcreator.passwordReset) {

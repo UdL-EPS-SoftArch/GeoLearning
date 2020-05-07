@@ -17,6 +17,8 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {PlayerService} from './player/player.service';
 import {ContentcreatorService} from './content-creator/contentcreator.service';
 import {MatchResultService} from './match-result/match-result.service';
+import {ImageNameService} from './games/image-name/image-name.service';
+import {ImageNameQuestionService} from './questions/image-name-questions/image-name-question.service';
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
@@ -39,7 +41,16 @@ import {MatchResultEditComponent} from './match-result/match-result-edit/match-r
 import {MatchResultDeleteComponent} from './match-result/match-result-delete/match-result-delete.component';
 import {MatchResultDetailComponent} from './match-result/match-result-detail/match-result-detail.component';
 import {MatchResultListComponent} from './match-result/match-result-list/match-result-list.component';
-import { MatchResultCreateComponent } from './match-result/match-result-create/match-result-create.component';
+import {MatchResultCreateComponent} from './match-result/match-result-create/match-result-create.component';
+import {ImageNameListComponent} from './games/image-name/image-name-list/image-name-list.component';
+import {ImageNameDetailComponent} from './games/image-name/image-name-detail/image-name-detail.component';
+import {ImageNameDeleteComponent} from './games/image-name/image-name-delete/image-name-delete.component';
+import {ImageNameEditComponent} from './games/image-name/image-name-edit/image-name-edit.component';
+import {ImageNameCreateComponent} from './games/image-name/image-name-create/image-name-create.component';
+import {ImageNameQuestionListComponent} from './questions/image-name-questions/image-name-question-list/image-name-question-list.component';
+import {ImageNameQuestionEditComponent} from './questions/image-name-questions/image-name-question-edit/image-name-question-edit.component';
+import {ImageNameQuestionCreateComponent} from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
+import {ImageNameQuestionDeleteComponent} from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +64,15 @@ import { MatchResultCreateComponent } from './match-result/match-result-create/m
     PlayerEditComponent,
     PlayerSearchComponent,
     NotFoundComponent,
+    ImageNameListComponent,
+    ImageNameDetailComponent,
+    ImageNameDeleteComponent,
+    ImageNameEditComponent,
+    ImageNameCreateComponent,
+    ImageNameQuestionListComponent,
+    ImageNameQuestionEditComponent,
+    ImageNameQuestionCreateComponent,
+    ImageNameQuestionDeleteComponent,
     ContentCreatorListComponent,
     ContentCreatorDeleteComponent,
     ContentCreatorDetailComponent,
@@ -83,8 +103,10 @@ import { MatchResultCreateComponent } from './match-result/match-result-create/m
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
     {provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService},
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService, MatchResultService
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService,
+    MatchResultService, ImageNameService, ImageNameQuestionService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

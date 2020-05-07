@@ -1,0 +1,25 @@
+<div class="card mb-1" *ngFor="let imageName of imageNameGames;">
+    <div class="card-block row m-1 col-12">
+      <div class="card-body row align-items-center">
+        <div class="col-6 mt-1">
+          <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageName.uri]">
+            Details
+          </button>
+        </div>
+        <div class="col-6 mt-1">
+          <h6 class="card-subtitle text-muted">Instructions</h6>
+          <p class="card-text">{{imageName.instructions}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="d-flex justify-content-end">
+  <button id="createBtn" type="button" class="btn m-1 btn-primary" [routerLink]="['/imageNames-create']">
+    Create
+  </button>
+</div>
+
+  <ngb-pagination class="d-flex justify-content-center"
+                  [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalImageNameGames"
+                  (pageChange)="changePage()"></ngb-pagination>
+
