@@ -1,0 +1,37 @@
+<h4>Edit match: {{match.id}}</h4>
+
+<form id="matchEditForm"(ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <!-- MatchName input -->
+    <div class="form-group">
+      <label class="control-label" for="name"><strong>Match name:</strong></label>
+      <input id="name" name="name" type="text" class="form-control" required
+             [(ngModel)]="match.id" #name="ngModel">
+      <div class="invalid-feedback">A Match Name is required</div>
+    </div>
+
+    <!-- Description input -->
+    <div class="form-group">
+      <label class="control-label" for="rating">Description</label>
+      <input id="description" name="description" type="text" class="form-control" required
+             [(ngModel)]="match.description">
+      <div class="invalid-feedback">A Description Match is required</div>
+    </div>
+
+    <!-- Rating input -->
+    <div class="form-group">
+      <label class="control-label" for="rating">Rating</label>
+      <input id="rating" name="rating" type="number" class="form-control" required
+             [(ngModel)]="match.rating">
+      <div class="invalid-feedback">A Rating Match is required</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <button id="back" type="button" class="btn btn-outline-danger pull-right" (click)="goBack()">Cancel</button>
+      <button id="submit" type="submit" class="btn btn-success pull-right marged-left" (click)="goBack()">Edit</button>
+    </div>
+
+  </fieldset>
+</form>
