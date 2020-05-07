@@ -7,7 +7,7 @@ export class Match extends Resource{
   name: string;
   rating: number;
   description: string;
-  contentCreator: string;
+  contentCreator: ContentCreator;
   games: Game[];
 
   uri: string;
