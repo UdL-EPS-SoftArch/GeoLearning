@@ -1,13 +1,13 @@
-<h4>Edit match: {{match.id}}</h4>
+<h4>Edit match: {{match.name}}</h4>
 
 <form id="matchEditForm"(ngSubmit)="onSubmit()" #form="ngForm">
   <fieldset>
 
     <!-- MatchName input -->
     <div class="form-group">
-      <label class="control-label" for="name"><strong>Match name:</strong></label>
+      <label class="control-label" for="name">Match name:</label>
       <input id="name" name="name" type="text" class="form-control" required
-             [(ngModel)]="match.id" #name="ngModel">
+             [(ngModel)]="match.name" #name="ngModel">
       <div class="invalid-feedback">A Match Name is required</div>
     </div>
 
