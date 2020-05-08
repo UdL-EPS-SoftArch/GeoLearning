@@ -29,8 +29,8 @@ import {MatchResultCreateComponent} from './match-result/match-result-create/mat
 import {MatchCreateComponent} from './match/match-create/match-create.component';
 import {MatchListComponent} from './match/match-list/match-list.component';
 import {MatchDetailComponent} from './match/match-detail/match-detail.component';
-import {MatchEditComponent} from "./match/match-edit/match-edit.component";
-import {MatchDeleteComponent} from "./match/match-delete/match-delete.component";
+import {MatchEditComponent} from './match/match-edit/match-edit.component';
+import {MatchDeleteComponent} from './match/match-delete/match-delete.component';
 
 const routes: Routes = [
   {path: 'registerContentCreator', component: ContentCreatorRegisterComponent},

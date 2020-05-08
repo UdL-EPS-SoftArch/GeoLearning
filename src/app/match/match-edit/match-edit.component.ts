@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Match} from "../match";
-import {ActivatedRoute, Router} from "@angular/router";
-import {MatchService} from "../match.service";
+import {Match} from '../match';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatchService} from '../match.service';
 import {Location} from '@angular/common';
 
 

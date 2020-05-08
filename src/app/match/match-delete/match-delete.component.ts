@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {Match} from "../match";
-import {MatchService} from "../match.service";
-import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
+import {Match} from '../match';
+import {MatchService} from '../match.service';
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 
 @Component({
   selector: 'app-match-delete',
