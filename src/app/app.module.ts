@@ -28,6 +28,8 @@ import {PlayerListComponent} from './player/player-list/player-list.component';
 import {PlayerDetailComponent} from './player/player-detail/player-detail.component';
 import {PlayerDeleteComponent} from './player/player-delete/player-delete.component';
 import {PlayerEditComponent} from './player/player-edit/player-edit.component';
+import {MatchEditComponent} from './match/match-edit/match-edit.component';
+import {MatchDeleteComponent} from './match/match-delete/match-delete.component';
 import {PlayerSearchComponent} from './player/player-search/player-search.component';
 import {NotFoundComponent} from './error-handler/error-alert/not-found.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -65,6 +67,8 @@ import {MatchDetailComponent} from './match/match-detail/match-detail.component'
     PlayerDetailComponent,
     PlayerDeleteComponent,
     PlayerEditComponent,
+    MatchEditComponent,
+    MatchDeleteComponent,
     PlayerSearchComponent,
     NotFoundComponent,
     ImageNameListComponent,

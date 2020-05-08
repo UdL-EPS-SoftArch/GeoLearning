@@ -29,6 +29,8 @@ import {MatchResultCreateComponent} from './match-result/match-result-create/mat
 import {MatchCreateComponent} from './match/match-create/match-create.component';
 import {MatchListComponent} from './match/match-list/match-list.component';
 import {MatchDetailComponent} from './match/match-detail/match-detail.component';
+import {MatchEditComponent} from './match/match-edit/match-edit.component';
+import {MatchDeleteComponent} from './match/match-delete/match-delete.component';
 
 const routes: Routes = [
   {path: 'registerContentCreator', component: ContentCreatorRegisterComponent},
@@ -61,6 +63,8 @@ const routes: Routes = [
   {path: 'matches', component: MatchListComponent, canActivate: [LoggedInGuard]},
   {path: 'matches/:id', component: MatchDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'createMatchResults', component: MatchResultCreateComponent, canActivate: [LoggedInGuard]},
+  {path: 'matches/:id/edit', component: MatchEditComponent, canActivate: [LoggedInGuard]},
+  {path: 'matches/:id/delete', component: MatchDeleteComponent, canActivate: [LoggedInGuard]},
   {path: 'about', component: AboutComponent},
   {path: '404', component: NotFoundComponent},
   {path: '', redirectTo: 'about', pathMatch: 'full'},
