@@ -41,8 +41,8 @@ import { ImageImageListComponent } from './games/image-image/image-image-list/im
 import { ImageImageQuestionService } from './questions/image-image-question/image-image-question.service';
 import { ImageImageQuestionCreateComponent } from './questions/image-image-question/image-image-question-create/image-image-question-create.component';
 import { ImageImageQuestionListComponent } from './questions/image-image-question/image-image-question-list/image-image-question-list.component';
-
-
+import { ImageImageDetailComponent } from './games/image-image/image-image-detail/image-image-detail.component';
+import { ImageImageEditComponent } from './games/image-image/image-image-edit/image-image-edit.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,9 @@ import { ImageImageQuestionListComponent } from './questions/image-image-questio
     ImageImageCreateComponent,
     ImageImageListComponent,
     ImageImageQuestionCreateComponent,
-    ImageImageQuestionListComponent
+    ImageImageQuestionListComponent,
+    ImageImageDetailComponent,
+    ImageImageEditComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,9 @@ import { ImageImageQuestionListComponent } from './questions/image-image-questio
 import { ImageImageQuestionCreateComponent } from './questions/image-image-question/image-image-question-create/image-image-question-create.component';
 import { ImageImageCreateComponent } from './games/image-image/image-image-create/image-image-create.component';
 import { ImageImageListComponent } from './games/image-image/image-image-list/image-image-list.component';
+import { ImageImageDetailComponent } from './games/image-image/image-image-detail/image-image-detail.component';
+import { ImageImageEditComponent } from './games/image-image/image-image-edit/image-image-edit.component';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoggedInGuard } from './login-basic/loggedin.guard';
@@ -32,6 +35,8 @@ const routes: Routes = [
   { path: 'imageImages', component: ImageImageListComponent, canActivate: [LoggedInGuard]},
   { path: 'imageImages/new', component: ImageImageCreateComponent, canActivate: [LoggedInGuard]},
   { path: 'imageImages/:id/addQuestion', component: ImageImageQuestionCreateComponent, canActivate: [LoggedInGuard]},
+  { path: 'imageImages/:id', component: ImageImageDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'imageImages/:id/edit', component: ImageImageEditComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full' },
