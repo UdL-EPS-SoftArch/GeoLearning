@@ -11,6 +11,7 @@ import {Location} from '@angular/common';
 })
 export class MatchEditComponent implements OnInit {
 
+  public id: string;
   public match: Match = new Match();
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -20,14 +21,15 @@ export class MatchEditComponent implements OnInit {
 
   ngOnInit(){
 
-    const id = this.route.snapshot.paramMap.get('id');
-    this.matchService.get(id).subscribe(
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.matchService.get(this.id).subscribe(
       match => this.match = match);
   }
 
   public onSubmit(): void{
     this.matchService.update(this.match).subscribe(
-      (match: Match) => this.router.navigate[match.uri]);
+      () =>
+       this.router.navigate['/match/' + this.id]);
   }
 
   public goBack(): void{
