@@ -25,7 +25,7 @@ export class ImageImageQuestionCreateComponent implements OnInit {
     this.imageImageQuestion.imageImage = imageImageUri;
     this.imageImageQuestionService.create(this.imageImageQuestion).subscribe(
       () => {
-        this.router.navigate([imageImageUri + '/questions']);
+        this.router.navigate([imageImageUri]);
       }
     )
   }

@@ -35,8 +35,8 @@ export class ImageImageListComponent implements OnInit {
   }
 
   getId(i: number) {
-    var uri = this.imageImageGames[i].uri.toString();
-    var splitted = uri.split('/');
+    const uri = this.imageImageGames[i].uri.toString();
+    const splitted = uri.split('/');
     return splitted[2];
   }
 
