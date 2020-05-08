@@ -1,6 +1,6 @@
 import { ImageImageQuestionServiceExtended } from './../image-image-question.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ImageImageQuestion } from './../imageImageQuestion';
+import { ImageImageQuestion } from './../ImageImageQuestion';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
