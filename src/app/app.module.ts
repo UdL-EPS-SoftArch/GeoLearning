@@ -51,6 +51,9 @@ import {ImageNameQuestionListComponent} from './questions/image-name-questions/i
 import {ImageNameQuestionEditComponent} from './questions/image-name-questions/image-name-question-edit/image-name-question-edit.component';
 import {ImageNameQuestionCreateComponent} from './questions/image-name-questions/image-name-question-create/image-name-question-create.component';
 import {ImageNameQuestionDeleteComponent} from './questions/image-name-questions/image-name-question-delete/image-name-question-delete.component';
+import {MatchCreateComponent} from './match/match-create/match-create.component';
+import {MatchListComponent} from './match/match-list/match-list.component';
+import {MatchDetailComponent} from './match/match-detail/match-detail.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +87,9 @@ import {ImageNameQuestionDeleteComponent} from './questions/image-name-questions
     MatchResultDetailComponent,
     MatchResultListComponent,
     MatchResultCreateComponent,
+    MatchCreateComponent,
+    MatchListComponent,
+    MatchDetailComponent,
   ],
   imports: [
     BrowserModule,

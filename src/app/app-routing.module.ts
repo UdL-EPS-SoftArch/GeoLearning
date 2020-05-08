@@ -26,6 +26,9 @@ import {MatchResultDetailComponent} from './match-result/match-result-detail/mat
 import {MatchResultEditComponent} from './match-result/match-result-edit/match-result-edit.component';
 import {MatchResultListComponent} from './match-result/match-result-list/match-result-list.component';
 import {MatchResultCreateComponent} from './match-result/match-result-create/match-result-create.component';
+import {MatchCreateComponent} from './match/match-create/match-create.component';
+import {MatchListComponent} from './match/match-list/match-list.component';
+import {MatchDetailComponent} from './match/match-detail/match-detail.component';
 
 const routes: Routes = [
   {path: 'registerContentCreator', component: ContentCreatorRegisterComponent},
@@ -54,6 +57,9 @@ const routes: Routes = [
   {path: 'matchResults/:id/edit', component: MatchResultEditComponent, canActivate: [LoggedInGuard]},
   {path: 'matchResults/:id', component: MatchResultDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'matchResults', component: MatchResultListComponent, canActivate: [LoggedInGuard]},
+  {path: 'createMatch', component: MatchCreateComponent, canActivate: [LoggedInGuard]},
+  {path: 'matches', component: MatchListComponent, canActivate: [LoggedInGuard]},
+  {path: 'matches/:id', component: MatchDetailComponent, canActivate: [LoggedInGuard]},
   {path: 'createMatchResults', component: MatchResultCreateComponent, canActivate: [LoggedInGuard]},
   {path: 'about', component: AboutComponent},
   {path: '404', component: NotFoundComponent},
