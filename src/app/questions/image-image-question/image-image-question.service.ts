@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { RestService } from '@lagoshny/ngx-hal-client';
-import { ImageImageQuestion } from './ImageImageQuestion';
+import {ImageImageQuestion} from './imageImageQuestion';
 
 @Injectable()
 export class ImageImageQuestionService extends RestService<ImageImageQuestion> {
