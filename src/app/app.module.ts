@@ -13,9 +13,10 @@ import {LoginBasicModule} from './login-basic/login-basic.module';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {AuthInterceptor} from './login-basic/auth-interceptor';
 
-import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
-import {PlayerService} from './player/player.service';
-import {ContentcreatorService} from './content-creator/contentcreator.service';
+import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
+import { PlayerService } from './player/player.service';
+import { ContentcreatorService } from './content-creator/contentcreator.service';
+import { ImageImageService } from './games/image-image/image-image.service';
 import {MatchResultService} from './match-result/match-result.service';
 import {ImageNameService} from './games/image-name/image-name.service';
 import {ImageNameQuestionService} from './questions/image-name-questions/image-name-question.service';
@@ -69,6 +70,14 @@ import {ImageOptionQuestionListComponent} from './questions/image-option-questio
 
 
 
+import { ImageImageCreateComponent } from './games/image-image/image-image-create/image-image-create.component';
+import { ImageImageListComponent } from './games/image-image/image-image-list/image-image-list.component';
+import { ImageImageQuestionService } from './questions/image-image-question/image-image-question.service';
+import { ImageImageQuestionCreateComponent } from './questions/image-image-question/image-image-question-create/image-image-question-create.component';
+import { ImageImageQuestionListComponent } from './questions/image-image-question/image-image-question-list/image-image-question-list.component';
+import { ImageImageDetailComponent } from './games/image-image/image-image-detail/image-image-detail.component';
+import { ImageImageEditComponent } from './games/image-image/image-image-edit/image-image-edit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,6 +116,12 @@ import {ImageOptionQuestionListComponent} from './questions/image-option-questio
     MatchCreateComponent,
     MatchListComponent,
     MatchDetailComponent,
+    ImageImageCreateComponent,
+    ImageImageListComponent,
+    ImageImageQuestionCreateComponent,
+    ImageImageQuestionListComponent,
+    ImageImageDetailComponent,
+    ImageImageEditComponent,
     ImageOptionListComponent,
     ImageOptionCreateComponent,
     ImageOptionQuestionCreateComponent,
@@ -132,7 +147,8 @@ import {ImageOptionQuestionListComponent} from './questions/image-option-questio
     {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
     {provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService},
     AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService,
-    MatchResultService, ImageNameService, ImageNameQuestionService, ImageOptionService, ImageOptionQuestionService
+    MatchResultService, ImageNameService, ImageNameQuestionService, ImageImageService,
+    ImageImageQuestionService, ImageOptionService, ImageOptionQuestionService
   ],
   bootstrap: [AppComponent]
 })

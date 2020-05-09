@@ -3,9 +3,19 @@
     <span class="fa fa-user-circle-o"></span> {{getCurrentUser().id}}</a>
 </li>
 
+<li class="nav-item" *ngIf="isLoggedIn()" id="currentUser">
+  <a class="nav-link" *ngIf="isRole('Game')" [routerLink]="[getCurrentUser().uri]">
+    <span class="fa fa-user-circle-o"></span> {{getCurrentUser().id}}</a>
+</li>
+
 <li class="nav-item" *ngIf="isLoggedIn()">
   <a class="nav-link" href="#" (click)="logout($event)">
     <span class="fa fa-sign-out"></span> Logout</a>
+</li>
+
+<li class="nav-item" *ngIf="isLoggedIn()" id="currentUser">
+  <a class="nav-link" *ngIf="isRole('Game')" [routerLink]="[getCurrentUser().uri]">
+    <span class="fa fa-user-circle-o"></span> {{getCurrentUser().id}}</a>
 </li>
 
 <li class="nav-item" *ngIf="!isLoggedIn()">
