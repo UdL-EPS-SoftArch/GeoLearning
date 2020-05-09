@@ -19,11 +19,39 @@
         </div>
       </li>
       <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="playDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Games</a>
+        <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/imageNames']"><span class="fa fa-flag"></span> ImageName</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="creatorsDropdown" role="button"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>ContentCreators</a>
         <div class="dropdown-menu" aria-labelledby="creatorsDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
              [routerLink]="['/contentCreators']"><span class="fa fa-user"></span> List</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="matchDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Match</a>
+        <div class="dropdown-menu" aria-labelledby="matchDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/createMatch']"><span class="fa fa-plus"></span> Create Match</a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/matches']"><span class="fa fa-list"></span> List</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="matchResultDropdown" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>MatchResults</a>
+        <div class="dropdown-menu" aria-labelledby="matchResultDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/createMatchResults']"><span class="fa fa-plus-circle"></span> Create MatchResult</a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/matchResults']"><span class="fa fa-user"></span> List</a>
         </div>
       </li>
       <li class="nav-item" *ngIf="isLogged()" ngbDropdown>

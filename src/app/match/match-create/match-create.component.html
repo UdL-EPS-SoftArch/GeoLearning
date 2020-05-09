@@ -1,0 +1,30 @@
+<form id="match-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <!-- Instruction input -->
+    <div class="form-group">
+      <label class="control-label" for="name">Name</label>
+      <input id="name" name="name" type="text" class="form-control" required
+             [(ngModel)]="match.name">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="rating">Rating</label>
+      <input id="rating" name="rating" type="number" class="form-control" required
+             [(ngModel)]="match.rating">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="rating">Description</label>
+      <input id="description" name="description" type="text" class="form-control" required
+             [(ngModel)]="match.description">
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right"
+              [disabled]="!form.form.valid">Submit</button>
+    </div>
+
+  </fieldset>
+</form>

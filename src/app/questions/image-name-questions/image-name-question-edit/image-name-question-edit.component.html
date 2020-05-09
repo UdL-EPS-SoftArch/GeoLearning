@@ -1,0 +1,27 @@
+<form id="imageName-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <fieldset>
+  
+      <!-- Image input -->
+      <div class="form-group">
+        <label class="control-label" for="email">Image URL*</label>
+        <input id="image" name="image" type="url" class="form-control" required
+               [(ngModel)]="imageNameQuestion.image">
+      </div>
+  
+      <!-- Solution input -->
+      <div class="form-group">
+        <label class="control-label" for="email">Solution*</label>
+        <input id="solution" name="solution" type="text" class="form-control" required
+               [(ngModel)]="imageNameQuestion.solution">
+      </div>
+  
+      <!-- Button -->
+      <div class="form-group">
+        <button id="submit" type="submit" class="btn m-1 btn-success pull-right"
+                [disabled]="!form.form.valid">Submit</button>
+        <button id="imageName" type="button" (click)="backClicked()"
+                class="btn m-1 btn-outline-primary pull-right">Back</button>
+      </div>
+  
+    </fieldset>
+  </form>
