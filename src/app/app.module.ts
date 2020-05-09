@@ -57,6 +57,18 @@ import {ImageNameQuestionDeleteComponent} from './questions/image-name-questions
 import {MatchCreateComponent} from './match/match-create/match-create.component';
 import {MatchListComponent} from './match/match-list/match-list.component';
 import {MatchDetailComponent} from './match/match-detail/match-detail.component';
+import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
+import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
+import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
+
+import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
+import {ImageOptionService} from './games/image-option/image-option.service';
+import {ImageOptionQuestionService} from './questions/image-option-question/image-option-question.service';
+import {ImageOptionQuestionCreateComponent} from './questions/image-option-question/image-option-question-create/image-option-question-create.component';
+import {ImageOptionQuestionListComponent} from './questions/image-option-question/image-option-question-list/image-option-question-list.component';
+
+
+
 
 import { ImageImageCreateComponent } from './games/image-image/image-image-create/image-image-create.component';
 import { ImageImageListComponent } from './games/image-image/image-image-list/image-image-list.component';
@@ -79,6 +91,7 @@ import { ImageImageEditComponent } from './games/image-image/image-image-edit/im
     MatchEditComponent,
     MatchDeleteComponent,
     PlayerSearchComponent,
+    ImageOptionDetailComponent,
     NotFoundComponent,
     ImageNameListComponent,
     ImageNameDetailComponent,
@@ -108,7 +121,12 @@ import { ImageImageEditComponent } from './games/image-image/image-image-edit/im
     ImageImageQuestionCreateComponent,
     ImageImageQuestionListComponent,
     ImageImageDetailComponent,
-    ImageImageEditComponent
+    ImageImageEditComponent,
+    ImageOptionListComponent,
+    ImageOptionCreateComponent,
+    ImageOptionQuestionCreateComponent,
+    ImageOptionQuestionListComponent,
+    ImageOptionEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -129,7 +147,8 @@ import { ImageImageEditComponent } from './games/image-image/image-image-edit/im
     {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
     {provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService},
     AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService,
-    MatchResultService, ImageNameService, ImageNameQuestionService, ImageImageService, ImageImageQuestionService
+    MatchResultService, ImageNameService, ImageNameQuestionService, ImageImageService,
+    ImageImageQuestionService, ImageOptionService, ImageOptionQuestionService
   ],
   bootstrap: [AppComponent]
 })

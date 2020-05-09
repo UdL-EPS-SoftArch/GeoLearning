@@ -1,0 +1,22 @@
+<div class="card mb-1" *ngFor="let imageOption of imageOptionGames;let indexOfelement=index;">
+  <div class="card-block row m-1 col-12">
+    <div class="card-body row align-items-center">
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Uri</h6>
+        <a class="card-text" [routerLink]="['/imageOptions', getId(indexOfelement)]">{{getId(indexOfelement)}}</a>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Instructions</h6>
+        <p class="card-text">{{imageOption.instructions}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-end">
+  <button id="createBtn" type="button" [routerLink]="['/imageOptions/new']" class="btn m-1 btn-primary">Create Image Option Game</button>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalImageOptionGames"
+                (pageChange)="changePage()"></ngb-pagination>
+

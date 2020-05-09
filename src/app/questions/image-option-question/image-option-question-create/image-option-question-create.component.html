@@ -1,0 +1,62 @@
+<h2>Add question</h2>
+<form id="image-option-question-create" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+      <label class="control-label" for="image"><strong>Image:</strong></label>
+      <input id="image" name="image" type="text" class="form-control" required
+             [(ngModel)]="imageOptionQuestion.image" #name="ngModel">
+      <div class="invalid-feedback">An Image is required</div>
+    </div>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+    <label class="control-label" for="OptionA"><strong>OptionA:</strong></label>
+    <input id="optionA" name="OptionA" type="text" class="form-control" required
+           [(ngModel)]="imageOptionQuestion.optionA" #name="ngModel">
+    <div class="invalid-feedback">An OptionA is required</div>
+    </div>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+    <label class="control-label" for="OptionB"><strong>OptionB:</strong></label>
+    <input id="OptionB" name="OptionB" type="text" class="form-control" required
+           [(ngModel)]="imageOptionQuestion.optionB" #name="ngModel">
+    <div class="invalid-feedback">An OptionB is required</div>
+    </div>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+    <label class="control-label" for="OptionC"><strong>OptionC:</strong></label>
+    <input id="OptionC" name="OptionC" type="text" class="form-control" required
+           [(ngModel)]="imageOptionQuestion.optionC" #name="ngModel">
+    <div class="invalid-feedback">An OptionC is required</div>
+    </div>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+    <label class="control-label" for="OptionD"><strong>OptionD:</strong></label>
+    <input id="OptionD" name="OptionD" type="text" class="form-control" required
+           [(ngModel)]="imageOptionQuestion.optionD" #name="ngModel">
+    <div class="invalid-feedback">An OptionD is required</div>
+    </div>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+      <label class="control-label" for="OptionE"><strong>OptionE:</strong></label>
+      <input id="OptionE" name="OptionE" type="text" class="form-control" required
+             [(ngModel)]="imageOptionQuestion.optionE" #name="ngModel">
+      <div class="invalid-feedback">An OptionE is required</div>
+    </div>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+      <label class="control-label" for="OptionE"><strong>Solution:</strong></label>
+      <input id="Solution" name="Solution" type="text" class="form-control" required
+             [(ngModel)]="imageOptionQuestion.solution" #name="ngModel">
+      <div class="invalid-feedback">A Solution is required</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Add</button> <!--ruta de creació-->
+      <button id="listBtn" type="button" [routerLink]="['']" class="btn m-1 btn-outline-primary pull-right">Back</button>
+    </div>
+
+  </fieldset>
+</form>
+

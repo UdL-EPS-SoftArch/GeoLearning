@@ -38,6 +38,11 @@ import {MatchListComponent} from './match/match-list/match-list.component';
 import {MatchDetailComponent} from './match/match-detail/match-detail.component';
 import {MatchEditComponent} from './match/match-edit/match-edit.component';
 import {MatchDeleteComponent} from './match/match-delete/match-delete.component';
+import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
+import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
+import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
+import {ImageOptionQuestionCreateComponent} from './questions/image-option-question/image-option-question-create/image-option-question-create.component';
+import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
 
 const routes: Routes = [
   {path: 'registerContentCreator', component: ContentCreatorRegisterComponent},
@@ -78,8 +83,15 @@ const routes: Routes = [
   { path: 'imageImages/:id', component: ImageImageDetailComponent, canActivate: [LoggedInGuard] },
   { path: 'imageImages/:id/edit', component: ImageImageEditComponent, canActivate: [LoggedInGuard] },
   { path: 'about', component: AboutComponent},
+  {path: 'players', component: PlayerListComponent, canActivate: [LoggedInGuard] },
+  { path: 'imageOptions', component: ImageOptionListComponent, canActivate: [LoggedInGuard] },
+  { path: 'imageOptions/new', component: ImageOptionCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'imageOptions/:id/addQuestion', component: ImageOptionQuestionCreateComponent, canActivate: [LoggedInGuard] },
+  { path: 'imageOptions/:id', component: ImageOptionDetailComponent, canActivate: [LoggedInGuard] },
+  { path: 'about', component: AboutComponent},
   {path: '404', component: NotFoundComponent},
   {path: '', redirectTo: 'about', pathMatch: 'full'},
+  { path: 'imageOptions/:id/edit', component: ImageOptionEditComponent, canActivate: [LoggedInGuard] },
 ];
 
 @NgModule({

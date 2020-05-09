@@ -1,0 +1,21 @@
+<h2>Create a new Image Option game</h2>
+<form id="image-option-create" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <!-- ImageOption instructions input -->
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+      <label class="control-label" for="name"><strong>Instructions:</strong></label>
+      <input id="name" name="name" type="text" class="form-control" required
+             [(ngModel)]="imageOption.instructions" #name="ngModel">
+      <div class="invalid-feedback">A instructions is required</div>
+    </div>
+
+
+    <!-- Button -->
+    <div class="form-group">
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Next</button> <!--ruta de creació-->
+      <button id="listBtn" type="button" [routerLink]="['']" class="btn m-1 btn-outline-primary pull-right">Back</button>
+    </div>
+
+  </fieldset>
+</form>
