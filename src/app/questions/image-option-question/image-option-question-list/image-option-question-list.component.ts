@@ -1,7 +1,7 @@
-import { ImageOptionQuestion } from 'src/app/questions/image-option-question/ImageOptionQuestion';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ImageOptionQuestionService } from '../image-option-question.service';
+import {ImageOptionQuestion} from '../imageOptionQuestion';
 
 @Component({
   selector: 'app-image-option-question-list',
