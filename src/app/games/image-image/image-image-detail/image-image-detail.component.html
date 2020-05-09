@@ -1,0 +1,32 @@
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 class="card-title col-md-12 p-3">{{imageImage.uri}}</h4>
+    <div class="card-body row m-1">
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">ID</h6>
+        <p class="card-text">{{id}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Instructions</h6>
+        <p class="card-text">{{imageImage.instructions}}</p>
+      </div>
+      <div class="col-md-12">
+        <h6 class="card-subtitle text-muted" style="margin-bottom: 0.5em">Questions</h6>
+        <app-image-image-question-list></app-image-image-question-list>
+        <div class="d-flex justify-content-end">
+          <button id="createBtn" type="button" class="btn m-1 btn-primary" [routerLink]="['addQuestion']" routerLinkActive="router-link-active" >
+            Add question
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-right">
+      <button id="listBtn" type="button" [routerLink]="['/imageImages']"
+              class="btn m-1 btn-outline-primary">Back
+      </button>
+      <button id="editBtn" type="button" [routerLink]="['edit']"
+              class="btn m-1 btn-outline-success">Edit Game
+      </button>
+    </div>
+  </div>
+</div>
