@@ -3,12 +3,13 @@ import { Resource } from '@lagoshny/ngx-hal-client';
 
 export class User extends Resource {
   id: string;
-  uri: string;
   email: string;
   authorities: Authority[] = [];
   authorization = '';
   password = '';
   passwordReset = false;
+
+  uri: string;
 
   constructor(values: object = {}) {
     super();
