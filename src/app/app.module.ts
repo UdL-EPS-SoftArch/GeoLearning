@@ -56,17 +56,6 @@ import {ImageNameQuestionDeleteComponent} from './questions/image-name-questions
 import {MatchCreateComponent} from './match/match-create/match-create.component';
 import {MatchListComponent} from './match/match-list/match-list.component';
 import {MatchDetailComponent} from './match/match-detail/match-detail.component';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { AboutComponent } from './about/about.component';
-import { PlayerRegisterComponent } from './player/player-register/player-register.component';
-import { PlayerListComponent } from './player/player-list/player-list.component';
-import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
-import { PlayerDeleteComponent } from './player/player-delete/player-delete.component';
-import { PlayerEditComponent } from './player/player-edit/player-edit.component';
-import { PlayerSearchComponent } from './player/player-search/player-search.component';
-import { NotFoundComponent } from './error-handler/error-alert/not-found.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImageOptionListComponent } from './games/image-option/image-option-list/image-option-list.component';
 import { ImageOptionDetailComponent } from './games/image-option/image-option-detail/image-option-detail.component';
 import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
