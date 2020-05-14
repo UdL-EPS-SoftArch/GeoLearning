@@ -11,7 +11,7 @@
         <a class="nav-link" [routerLink]="['/about']">About</a>
       </li>
       <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="playDropdown" role="button"
+        <a class="nav-link dropdown-toggle" id="playerDropdown" role="button"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Players</a>
         <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
@@ -19,11 +19,15 @@
         </div>
       </li>
       <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="playDropdown" role="button"
+        <a class="nav-link dropdown-toggle" id="gamesDropdown" role="button"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Games</a>
         <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
              [routerLink]="['/imageNames']"><span class="fa fa-flag"></span> ImageName</a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/imageImages']"><span class="fa fa-flag"></span> ImageImage</a>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/imageOptions']"><span class="fa fa-flag"></span> ImageOption</a>
         </div>
       </li>
       <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
@@ -52,16 +56,6 @@
              [routerLink]="['/createMatchResults']"><span class="fa fa-plus-circle"></span> Create MatchResult</a>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
              [routerLink]="['/matchResults']"><span class="fa fa-user"></span> List</a>
-        </div>
-      </li>
-      <li class="nav-item" *ngIf="isLogged()" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="playDropdown" role="button"
-           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Games</a>
-        <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
-          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
-             [routerLink]="['/imageImages']"><span class="fa fa-flag"></span> ImageImage</a>
-          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
-             [routerLink]="['/imageOptions']"><span class="fa fa-flag"></span> ImageOption</a>
         </div>
       </li>
     </ul>
