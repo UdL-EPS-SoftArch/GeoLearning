@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ImageOption } from '../imageOption';
 import { Router } from '@angular/router';
 import { ImageOptionService } from '../image-option.service';
+import { AuthenticationBasicService } from '../../../login-basic/authentication-basic.service';
+
 
 @Component({
   selector: 'app-image-option-list',
@@ -16,7 +18,8 @@ export class ImageOptionListComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private imageOptionService: ImageOptionService) {
+    private imageOptionService: ImageOptionService,
+    private authenticationService: AuthenticationBasicService) {
   }
 
   ngOnInit(): void {
@@ -37,6 +40,10 @@ export class ImageOptionListComponent implements OnInit {
     const uri = this.imageOptionGames[i].uri.toString();
     const splitted = uri.split('/');
     return splitted[2];
+  }
+
+  isLoggedCreator() {
+    return this.authenticationService.isRole('CONTENTCREATOR');
   }
 
 }

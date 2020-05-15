@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ImageName } from '../imageName';
 import { Router } from '@angular/router';
 import { ImageNameService } from '../image-name.service';
+import { AuthenticationBasicService } from '../../../login-basic/authentication-basic.service';
+
 
 @Component({
   selector: 'app-image-name-list',
@@ -16,7 +18,8 @@ export class ImageNameListComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private imageNameService: ImageNameService) {
+    private imageNameService: ImageNameService,
+    private authenticationService: AuthenticationBasicService) {
   }
 
   ngOnInit(): void {
@@ -31,5 +34,9 @@ export class ImageNameListComponent implements OnInit {
   changePage() {
     this.imageNameService.page(this.page - 1).subscribe(
       (imageNameGames: ImageName[]) => this.imageNameGames = imageNameGames);
+  }
+
+  isLoggedCreator() {
+    return this.authenticationService.isRole('CONTENTCREATOR');
   }
 }
