@@ -13,7 +13,7 @@
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-end">
+<div class="d-flex justify-content-end" *ngIf="isLoggedCreator()">
   <button id="createBtn" type="button" [routerLink]="['/imageImages/new']" class="btn m-1 btn-primary">Create Image Image Game</button>
 </div>
 
