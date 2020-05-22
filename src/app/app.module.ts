@@ -16,13 +16,10 @@ import { AuthInterceptor } from './login-basic/auth-interceptor';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
 import { ImageNameService } from './games/image-name/image-name.service';
-import { ContentcreatorService, ContentcreatorServiceNarrow } from './content-creator/contentcreator.service';
-import { ImageNameQuestionService, ImageNameQuestionServiceExtended } from './questions/image-name-questions/image-name-question.service';
 import { ContentcreatorService } from './content-creator/contentcreator.service';
+import { ImageNameQuestionService, ImageNameQuestionServiceExtended } from './questions/image-name-questions/image-name-question.service';
 import { ImageImageService } from './games/image-image/image-image.service';
 import {MatchResultService} from './match-result/match-result.service';
-import {ImageNameService} from './games/image-name/image-name.service';
-import {ImageNameQuestionService} from './questions/image-name-questions/image-name-question.service';
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
@@ -150,7 +147,7 @@ import { ImageImageEditComponent } from './games/image-image/image-image-edit/im
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
     AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService,
-    ImageNameQuestionServiceExtended, ContentcreatorService, ContentcreatorServiceNarrow, MatchResultService, ImageImageService,
+    ImageNameQuestionServiceExtended, ContentcreatorService, MatchResultService, ImageImageService,
     ImageImageQuestionService, ImageOptionService, ImageOptionQuestionService
   ],
   bootstrap: [AppComponent]

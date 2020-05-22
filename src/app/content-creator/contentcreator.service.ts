@@ -17,13 +17,3 @@ export class ContentcreatorService extends RestService<ContentCreator> {
     return this.search('findByUsernameContaining', options);
   }
 }
-
-@Injectable({
-  providedIn: 'root'
-})
-export class ContentcreatorServiceNarrow extends RestService<ContentCreator> {
-
-  constructor(injector: Injector) {
-    super(ContentCreator, '', injector);
-  }
-}
