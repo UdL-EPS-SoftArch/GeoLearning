@@ -48,4 +48,7 @@ export class ImageNameListComponent implements OnInit {
     return imageName.creator.id;
   }
 
+  isLoggedCreator() {
+    return this.authenticationService.isRole('CONTENTCREATOR');
+  }
 }

@@ -1,0 +1,27 @@
+<h2>Add question</h2>
+<form id="image-image-question-create" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+      <label class="control-label" for="image"><strong>Image:</strong></label>
+      <input id="image" name="image" type="text" class="form-control" required
+             [(ngModel)]="imageImageQuestion.image" #name="ngModel">
+      <div class="invalid-feedback">An Image is required</div>
+    </div>
+
+    <div class="form-group" [class.was-validated]="name.dirty || name.touched">
+      <label class="control-label"><strong>Solution:</strong></label>
+      <input id="Solution" name="Solution" type="text" class="form-control" required
+             [(ngModel)]="imageImageQuestion.solution" #name="ngModel">
+      <div class="invalid-feedback">A Solution is required</div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right" [disabled]="!form.form.valid">Add</button> <!--ruta de creació-->
+      <button id="listBtn" type="button" [routerLink]="['']" class="btn m-1 btn-outline-primary pull-right">Back</button>
+    </div>
+
+  </fieldset>
+</form>
+

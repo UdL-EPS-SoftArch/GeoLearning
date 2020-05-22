@@ -1,0 +1,32 @@
+<div class="card mb-1" *ngFor="let imageOptionQuestion of imageOptionQuestions;">
+  <div class="card-block row m-1 col-auto">
+    <div class="card-body row align-items-center">
+      <div class="col-2 m-1">
+        <h6 class="card-subtitle text-muted">Image</h6>
+        <!-- <img src="{{getImage(imageNameQuestion.image)}}" width="100"> -->
+      </div>
+      <div class="col-2 m-1">
+        <h6 class="card-subtitle text-muted">OptionA</h6>
+        <p class="card-text">{{imageOptionQuestion.optionA}}</p>
+
+        <h6 class="card-subtitle text-muted">OptionB</h6>
+        <p class="card-text">{{imageOptionQuestion.optionB}}</p>
+      </div>
+      <div class="col-2 m-1">
+        <h6 class="card-subtitle text-muted">OptionC</h6>
+        <p class="card-text">{{imageOptionQuestion.optionC}}</p>
+        <h6 class="card-subtitle text-muted">OptionD</h6>
+        <p class="card-text">{{imageOptionQuestion.optionD}}</p>
+      </div>
+      <div class="col-2 m-1">
+
+        <h6 class="card-subtitle text-muted">OptionE</h6>
+        <p class="card-text">{{imageOptionQuestion.optionE}}</p>
+
+        <h6 class="card-subtitle text-muted"><strong>Solution</strong></h6>
+        <p class="card-text">{{imageOptionQuestion.solution}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

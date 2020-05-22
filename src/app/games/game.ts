@@ -2,8 +2,8 @@ import { Resource } from '@lagoshny/ngx-hal-client';
 import { ContentCreator } from '../content-creator/contentCreator';
 
 export class Game extends Resource {
-    uri: String;
-    instructions: String;
+    uri: string;
+    instructions: string;
     creator: ContentCreator;
 
     constructor(values: object = {}) {

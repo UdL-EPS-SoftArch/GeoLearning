@@ -27,8 +27,8 @@ export class ImageNameQuestionEditComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.imageNameQuestion.image = this.imageNameQuestion.image ? this.imageNameQuestion.image : undefined; // Don't edit if not a reset
-    this.imageNameQuestion.solution = this.imageNameQuestion.solution ? this.imageNameQuestion.solution : undefined; //Don't edit if not a reset
+    this.imageNameQuestion.image = this.imageNameQuestion.image ? this.imageNameQuestion.image : undefined;
+    this.imageNameQuestion.solution = this.imageNameQuestion.solution ? this.imageNameQuestion.solution : undefined;
 
     this.imageNameQuestionServiceExtended.update(this.imageNameQuestion).subscribe(
       () => {
