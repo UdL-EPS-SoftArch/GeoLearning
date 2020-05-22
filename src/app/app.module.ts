@@ -16,8 +16,8 @@ import { AuthInterceptor } from './login-basic/auth-interceptor';
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
 import { ImageNameService } from './games/image-name/image-name.service';
-import { ContentcreatorService } from './content-creator/contentcreator.service';
-import { ImageNameQuestionService } from './questions/image-name-questions/image-name-question.service';
+import { ContentcreatorService, ContentcreatorServiceNarrow } from './content-creator/contentcreator.service';
+import { ImageNameQuestionService, ImageNameQuestionServiceExtended } from './questions/image-name-questions/image-name-question.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -93,7 +93,7 @@ import { ContentCreatorSearchComponent } from './content-creator/content-creator
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
     { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
     AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService, 
-    ContentcreatorService
+    ImageNameQuestionServiceExtended, ContentcreatorService, ContentcreatorServiceNarrow
   ],
   bootstrap: [AppComponent]
 })

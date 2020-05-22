@@ -3,7 +3,9 @@ import { Observable } from 'rxjs/internal/Observable';
 import { RestService } from '@lagoshny/ngx-hal-client';
 import { ContentCreator } from './contentCreator';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ContentcreatorService extends RestService<ContentCreator> {
 
   constructor(injector: Injector) {
@@ -13,5 +15,15 @@ export class ContentcreatorService extends RestService<ContentCreator> {
   public findByUsernameContaining(text: string): Observable<ContentCreator[]> {
     const options: any = {params: [{key: 'text', value: text}]};
     return this.search('findByUsernameContaining', options);
+  }
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ContentcreatorServiceNarrow extends RestService<ContentCreator> {
+
+  constructor(injector: Injector) {
+    super(ContentCreator, '', injector);
   }
 }

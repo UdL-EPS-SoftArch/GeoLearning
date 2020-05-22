@@ -28,10 +28,7 @@ export class ImageNameDetailComponent implements OnInit {
 
   onCheckedBox(target) {
     this.imageName.isWrite = target.checked;
-    this.imageNameService.update(this.imageName).subscribe(
-      () => {
-        this.router.navigate(['/imageNames/' + this.id]);
-      });
+    this.imageNameService.update(this.imageName).subscribe();
   }
 
 }
