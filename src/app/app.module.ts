@@ -1,25 +1,25 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {NgbCollapseModule, NgbDropdownModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgxHalClientModule} from '@lagoshny/ngx-hal-client';
-import {ExternalConfigurationService} from './external-configuration-service';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgbCollapseModule, NgbDropdownModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxHalClientModule } from '@lagoshny/ngx-hal-client';
+import { ExternalConfigurationService } from './external-configuration-service';
 
-import {AppRoutingModule} from './app-routing.module';
-import {ErrorHandlerModule} from './error-handler/error-handler.module';
-import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
-import {LoginBasicModule} from './login-basic/login-basic.module';
-import {LoggedInGuard} from './login-basic/loggedin.guard';
-import {AuthInterceptor} from './login-basic/auth-interceptor';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorHandlerModule } from './error-handler/error-handler.module';
+import { HttpErrorInterceptor } from './error-handler/http-error-interceptor';
+import { LoginBasicModule } from './login-basic/login-basic.module';
+import { LoggedInGuard } from './login-basic/loggedin.guard';
+import { AuthInterceptor } from './login-basic/auth-interceptor';
 
 import { AuthenticationBasicService } from './login-basic/authentication-basic.service';
 import { PlayerService } from './player/player.service';
+import { ImageNameService } from './games/image-name/image-name.service';
 import { ContentcreatorService } from './content-creator/contentcreator.service';
+import { ImageNameQuestionService, ImageNameQuestionServiceExtended } from './questions/image-name-questions/image-name-question.service';
 import { ImageImageService } from './games/image-image/image-image.service';
 import {MatchResultService} from './match-result/match-result.service';
-import {ImageNameService} from './games/image-name/image-name.service';
-import {ImageNameQuestionService} from './questions/image-name-questions/image-name-question.service';
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
@@ -143,14 +143,13 @@ import { ImageImageEditComponent } from './games/image-image/image-image-edit/im
     ReactiveFormsModule,
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
-    {provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService},
-    AuthenticationBasicService, LoggedInGuard, PlayerService, ContentcreatorService,
-    MatchResultService, ImageNameService, ImageNameQuestionService, ImageImageService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: 'ExternalConfigurationService', useClass: ExternalConfigurationService },
+    AuthenticationBasicService, LoggedInGuard, PlayerService, ImageNameService, ImageNameQuestionService,
+    ImageNameQuestionServiceExtended, ContentcreatorService, MatchResultService, ImageImageService,
     ImageImageQuestionService, ImageOptionService, ImageOptionQuestionService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
