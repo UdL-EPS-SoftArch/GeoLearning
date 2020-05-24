@@ -3,6 +3,7 @@ import { ImageNameQuestion } from 'src/app/questions/image-name-questions/imageN
 
 export class ImageName extends Game {
     questions: ImageNameQuestion[] = [];
+    isWrite: boolean;
 
     constructor(values: object = {}) {
         super();

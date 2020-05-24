@@ -1,7 +1,7 @@
-import { Games } from '../games'
+import { Game } from '../game';
 
 
-export class ImageImage extends Games {
+export class ImageImage extends Game {
 
   constructor() {
     super();

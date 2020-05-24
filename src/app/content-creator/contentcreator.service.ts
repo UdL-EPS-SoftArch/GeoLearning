@@ -3,7 +3,9 @@ import { Observable } from 'rxjs/internal/Observable';
 import { RestService } from '@lagoshny/ngx-hal-client';
 import { ContentCreator } from './contentCreator';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ContentcreatorService extends RestService<ContentCreator> {
 
   constructor(injector: Injector) {
