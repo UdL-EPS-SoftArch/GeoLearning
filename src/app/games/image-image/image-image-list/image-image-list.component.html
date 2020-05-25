@@ -1,14 +1,15 @@
-
 <div class="card mb-1" *ngFor="let imageImage of imageImageGames;let indexOfelement=index;">
-  <div class="card-block row m-1 col-12">
-    <div class="card-body row align-items-center">
-      <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Uri</h6>
-        <a class="card-text" [routerLink]="['/imageImages', getId(indexOfelement)]">{{getId(indexOfelement)}}</a>
-      </div>
-      <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Instructions</h6>
-        <p class="card-text">{{imageImage.instructions}}</p>
+  <div class="card mb-1" **ngIf="getCurrentUser()==getCreatorIDFor(imageImage)">
+    <div class="card-block row m-1 col-12">
+      <div class="card-body row align-items-center">
+        <div class="col-6 mt-1">
+          <h6 class="card-subtitle text-muted">Uri</h6>
+          <a class="card-text" [routerLink]="['/imageImages', getId(indexOfelement)]">{{getId(indexOfelement)}}</a>
+        </div>
+        <div class="col-6 mt-1">
+          <h6 class="card-subtitle text-muted">Instructions</h6>
+          <p class="card-text">{{imageImage.instructions}}</p>
+        </div>
       </div>
     </div>
   </div>
