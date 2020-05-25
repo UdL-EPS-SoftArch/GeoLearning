@@ -3,8 +3,9 @@
     <div class="card-block row m-1 col-12">
       <div class="card-body row align-items-center">
         <div class="col-6 mt-1">
-          <h6 class="card-subtitle text-muted">Uri</h6>
-          <a class="card-text" [routerLink]="['/imageImages', getId(indexOfelement)]">{{getId(indexOfelement)}}</a>
+          <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageImage.uri]">
+            Details
+          </button>
         </div>
         <div class="col-6 mt-1">
           <h6 class="card-subtitle text-muted">Instructions</h6>

@@ -1,5 +1,4 @@
-import { ContentCreator } from './../../../content-creator/contentCreator';
-import { ContentcreatorService } from './../../../content-creator/contentcreator.service';
+import { ContentCreator } from '../../../content-creator/contentCreator';
 import { ImageImageService } from '../image-image.service';
 import { Router } from '@angular/router';
 import { ImageImage } from '../imageImage';
@@ -22,8 +21,7 @@ export class ImageImageListComponent implements OnInit {
   constructor(
     public router: Router,
     private imageImageService: ImageImageService,
-    private authenticationService: AuthenticationBasicService,
-    private contentcreatorService: ContentcreatorService) {
+    private authenticationService: AuthenticationBasicService) {
   }
 
   ngOnInit(): void {
@@ -36,15 +34,10 @@ export class ImageImageListComponent implements OnInit {
   }
 
   changePage() {
-//    this.imageImageService.page(this.page - 1).subscribe(
-//      (this.imageImageGames: ImageImage[]) => this.imageImageGames = this.imageImageGames);
+    this.imageImageService.page(this.page - 1).subscribe(
+      (imageImageGames: ImageImage[]) => this.imageImageGames = imageImageGames);
   }
 
-  getId(i: number) {
-    const uri = this.imageImageGames[i].uri.toString();
-    const splitted = uri.split('/');
-    return splitted[2];
-  }
 
   getCurrentUser(): string {
     return this.authenticationService.getCurrentUser().id;
