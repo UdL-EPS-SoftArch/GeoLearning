@@ -43,6 +43,7 @@ import { ImageOptionDetailComponent } from './games/image-option/image-option-de
 import { ImageOptionCreateComponent } from './games/image-option/image-option-create/image-option-create.component';
 import {ImageOptionQuestionCreateComponent} from './questions/image-option-question/image-option-question-create/image-option-question-create.component';
 import { ImageOptionEditComponent } from './games/image-option/image-option-edit/image-option-edit.component';
+import { ImageNameDetailPlayerViewComponent } from './games/image-name/image-name-detail-player-view/image-name-detail-player-view.component';
 
 const routes: Routes = [
   {path: 'registerContentCreator', component: ContentCreatorRegisterComponent},
@@ -62,6 +63,7 @@ const routes: Routes = [
     canActivate: [LoggedInGuard]
   },
   {path: 'imageNames/:id/editQuestion/:idq', component: ImageNameQuestionEditComponent, canActivate: [LoggedInGuard]},
+  {path: 'imageNames/:id/play', component: ImageNameDetailPlayerViewComponent, canActivate: [LoggedInGuard]},
   {path: 'players/:id/delete', component: PlayerDeleteComponent, canActivate: [LoggedInGuard]},
   {path: 'contentCreators/:id/delete', component: ContentCreatorDeleteComponent, canActivate: [LoggedInGuard]},
   {path: 'contentCreators/:id/edit', component: ContentCreatorEditComponent, canActivate: [LoggedInGuard]},
