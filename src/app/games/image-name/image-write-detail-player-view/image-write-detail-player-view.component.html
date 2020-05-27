@@ -2,42 +2,31 @@
   <fieldset>
     <h1>{{imageWrite.instructions}}</h1>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-3">
           <div class="card-header">
             <h3 class="card-title text-muted">Images</h3>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let item of images; let i=index">
-              <div class="container">
-                <div class="row">
-                  <div class="ml-auto">
-                    <img style="width:100px" src="{{getImage(item)}}">
-                  </div>
-                  <div class="ml-auto">
-                    <p>{{i}}</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-9">
           <div class="card-header">
             <h3 class="card-title text-muted">Solutions</h3>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let item of images; let i=index">
-              <div class="container">
-                <div class="row">
-                  <div class="form-group">
-                    <input id="i" name="response" type="text" class="form-control" placeholder="Country" style="width: 200px"
-                    [(ngModel)]="responses[i]">
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
         </div>
+    </div>
+    <div *ngFor="let item of images; let i=index">
+      <div class="card mb-1">
+        <div class="card-block row m-1 col-12">
+          <div class="card-body row align-items-center">
+            <div class="col-3 mt-1">
+              <img style="width:100px; border-style:outset;" src="{{getImage(item)}}">
+            </div>
+            <div class="col-9 mt-1">
+              <input id="i" name="response" type="text" class="form-control" placeholder="Country"
+                      [(ngModel)]="responses[i]">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
