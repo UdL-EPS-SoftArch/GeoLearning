@@ -9,7 +9,6 @@ import {ImageOptionQuestion} from '../imageOptionQuestion';
 })
 export class ImageOptionQuestionListComponent implements OnInit {
 
-
   public imageOptionQuestions: ImageOptionQuestion[] = [];
   constructor( private router: ActivatedRoute,
                private routers: Router,
@@ -25,5 +24,4 @@ export class ImageOptionQuestionListComponent implements OnInit {
       }
     )
   }
-
 }
