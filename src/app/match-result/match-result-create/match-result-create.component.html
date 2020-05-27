@@ -13,14 +13,14 @@
     </div>
 
     <!-- Match input -->
-    <!--<div class="form-group" [class.was-validated]="match.dirty || match.touched">
+    <div class="form-group" [class.was-validated]="match.dirty || match.touched">
       <label class="control-label" for="match">Match:</label>
       <select id="match" name="match" type="text" class="form-control" required
               [(ngModel)]="matchResult.match" #match="ngModel">
-        <option *ngFor="let match of matches" [value]="match.uri">{{match.id}}</option>
+        <option *ngFor="let match of matches" [value]="match.uri">{{match.name}}</option>
       </select>
       <div class="invalid-feedback">A Match is required</div>
-    </div>-->
+    </div>
 
     <!-- Result input -->
     <div class="form-group" [class.was-validated]="result.dirty || result.touched">
