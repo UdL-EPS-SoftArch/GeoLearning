@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { ImageName } from "../imageName";
-import { ImageNameQuestion } from "src/app/questions/image-name-questions/imageNameQuestion";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ImageNameService } from "../image-name.service";
-import { Observable, Observer } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { ImageName } from '../imageName';
+import { ImageNameQuestion } from 'src/app/questions/image-name-questions/imageNameQuestion';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ImageNameService } from '../image-name.service';
+import { Observable, Observer } from 'rxjs';
 
 @Component({
-  selector: "app-image-write-detail-player-view",
-  templateUrl: "./image-write-detail-player-view.component.html",
+  selector: 'app-image-write-detail-player-view',
+  templateUrl: './image-write-detail-player-view.component.html',
 })
 export class ImageWriteDetailPlayerViewComponent implements OnInit {
   public imageWrite: ImageName = new ImageName();
@@ -24,11 +24,11 @@ export class ImageWriteDetailPlayerViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get("id");
+    this.id = this.route.snapshot.paramMap.get('id');
     this.imageNameService.get(this.id).subscribe((imageWrite) => {
       this.imageWrite = imageWrite;
       imageWrite
-        .getRelationArray(ImageNameQuestion, "questions")
+        .getRelationArray(ImageNameQuestion, 'questions')
         .subscribe((imageNameQuestions: ImageNameQuestion[]) => {
           this.imageWrite.questions = imageNameQuestions;
           this.getImages();
@@ -38,7 +38,7 @@ export class ImageWriteDetailPlayerViewComponent implements OnInit {
 
   getImage(imageUrl: string): any {
     this.getBase64ImageFromURL(imageUrl).subscribe((base64data) => {
-      this.base64Image = "data:image/jpg;base64," + base64data;
+      this.base64Image = 'data:image/jpg;base64,' + base64data;
     });
     return this.base64Image;
   }
@@ -46,7 +46,7 @@ export class ImageWriteDetailPlayerViewComponent implements OnInit {
   getBase64ImageFromURL(url: string) {
     return new Observable((observer: Observer<string>) => {
       const img = new Image();
-      img.crossOrigin = "Anonymous";
+      img.crossOrigin = 'Anonymous';
       img.src = url;
       if (!img.complete) {
         img.onload = () => {
@@ -64,13 +64,13 @@ export class ImageWriteDetailPlayerViewComponent implements OnInit {
   }
 
   getBase64Image(img: HTMLImageElement) {
-    const canvas = document.createElement("canvas");
+    const canvas = document.createElement('canvas');
     canvas.width = img.width;
     canvas.height = img.height;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0);
-    const dataURL = canvas.toDataURL("image/png");
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+    const dataURL = canvas.toDataURL('image/png');
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
   }
 
   getImages() {

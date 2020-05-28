@@ -18,7 +18,7 @@ export class ImageNameDetailPlayerViewComponent implements OnInit {
   public solutions: string[] = [];
   public responses: number[] = [];
   public matchResponses: ImageNameQuestion[] = [];
-  
+
   constructor(private route: ActivatedRoute,
               private imageNameService: ImageNameService,
               private router: Router) { }
@@ -83,10 +83,10 @@ export class ImageNameDetailPlayerViewComponent implements OnInit {
 
   getSortedSolutions(){
     this.imageName.questions.forEach(element => {
-      var found: boolean = false
+      let found = false
       while(!found) {
-        var index: number = this.getRandomInt(this.imageName.questions.length);
-        if (this.solutions[index] == undefined) {
+        const index: number = this.getRandomInt(this.imageName.questions.length);
+        if (this.solutions[index] === undefined) {
           this.solutions[index] = element.solution;
           found = true
         }
