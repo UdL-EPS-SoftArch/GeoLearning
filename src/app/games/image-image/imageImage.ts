@@ -7,10 +7,4 @@ export class ImageImage extends Game {
     super();
 
   }
-
-  public toJson(): ImageImage{
-    return Object.assign({}, this, {
-      '@type': 'ImageImage'
-    });
-  }
 }

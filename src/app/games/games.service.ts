@@ -1,15 +1,14 @@
 import {Injectable, Injector} from '@angular/core';
 import {RestService} from '@lagoshny/ngx-hal-client';
 import { Observable } from 'rxjs/internal/Observable';
-import {Game, GameImpl} from './game';
-import {ImageImage} from "./image-image/imageImage";
+import {Game} from './game';
 
 @Injectable({
   providedIn: 'root'
 })
-export abstract class GameService extends RestService<GameImpl>{
+export class GameService extends RestService<Game>{
   constructor(injector: Injector) {
-    super(GameImpl, 'games', injector);
+    super(Game, 'games', injector);
   }
 
   public findGamesByCreatorUsernameContaining(username: string): Observable<Game[]> {

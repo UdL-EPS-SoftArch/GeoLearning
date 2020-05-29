@@ -1,6 +1,5 @@
 import {Resource} from '@lagoshny/ngx-hal-client';
 import {ContentCreator} from '../content-creator/contentCreator';
-import {Game} from '../games/game'
 
 export class Match extends Resource{
   id: number;
@@ -8,8 +7,7 @@ export class Match extends Resource{
   rating: number;
   description: string;
   contentCreator: ContentCreator;
-  games: Array<Game>;
-  //games: string[];
+  games: string[];
 
   uri: string;
 
@@ -19,10 +17,7 @@ export class Match extends Resource{
   }
 
 
-  setGames(games: Game[]){
-    this.games = games;
-  }
-  /*setGames(uri: string[]){
+  setGames(uri: string[]){
     this.games = uri;
-  }*/
+  }
 }

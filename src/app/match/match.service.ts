@@ -2,8 +2,6 @@ import {Injectable, Injector} from '@angular/core';
 import {RestService} from '@lagoshny/ngx-hal-client';
 import {Match} from './match';
 import { Observable } from 'rxjs/internal/Observable';
-/*import {Player} from "../player/player";
-import {ContentCreator} from "../content-creator/contentCreator";*/
 
 @Injectable({
   providedIn: 'root'

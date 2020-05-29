@@ -7,14 +7,7 @@ export class ImageName extends Game {
 
     constructor(values: object = {}) {
         super();
-        Object.assign({}, this, {
-          '@type': 'ImageName'
-        });
+        Object.assign(this as any, values);
       }
 
-  public toJson(): ImageName{
-    return Object.assign({}, this, {
-      '@type': 'ImageName'
-    });
-  }
 }
