@@ -1,0 +1,40 @@
+<form id="playImageName-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+    <h1>{{imageWrite.instructions}}</h1>
+    <div class="row">
+        <div class="col-sm-3">
+          <div class="card-header">
+            <h3 class="card-title text-muted">Images</h3>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="card-header">
+            <h3 class="card-title text-muted">Solutions</h3>
+          </div>
+        </div>
+    </div>
+    <div *ngFor="let item of images; let i=index">
+      <div class="card mb-1">
+        <div class="card-block row m-1 col-12">
+          <div class="card-body row align-items-center">
+            <div class="col-3 mt-1">
+              <img style="width:100px; border-style:outset;" src="{{getImage(item)}}">
+            </div>
+            <div class="col-9 mt-1">
+              <input id="i" name="response" type="text" class="form-control" placeholder="Country"
+                      [(ngModel)]="responses[i]">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right"
+              [disabled]="!form.form.valid">Submit</button>
+      <button id="imageNameDetail" type="button" [routerLink]="['/imageNames/']"
+              class="btn m-1 btn-outline-primary pull-right">Back</button>
+    </div>
+
+  </fieldset>
+</form>
