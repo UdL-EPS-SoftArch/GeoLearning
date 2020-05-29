@@ -10,4 +10,9 @@ export class ImageOption extends Game {
 
   }
 
+  public toJson(): ImageOption{
+    return Object.assign({}, this, {
+      '@type': 'ImageOption'
+    });
+  }
 }

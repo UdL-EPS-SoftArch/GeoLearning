@@ -1,7 +1,8 @@
 import { Resource } from '@lagoshny/ngx-hal-client';
 import { ContentCreator } from '../content-creator/contentCreator';
 
-export class Game extends Resource {
+
+export abstract class Game extends Resource {
     uri: string;
     instructions: string;
     creator: ContentCreator;
@@ -9,6 +10,17 @@ export class Game extends Resource {
     constructor(values: object = {}) {
         super();
         Object.assign(this as any, values);
-      }
+    }
 
+    public abstract toJson(): Game;
+}
+
+export class GameImpl extends Game{
+  constructor() {
+    super();
+  }
+
+  toJson(): Game {
+    return null;
+  }
 }

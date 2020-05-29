@@ -2,12 +2,19 @@ import { Game } from '../game'
 import { ImageNameQuestion } from 'src/app/questions/image-name-questions/imageNameQuestion';
 
 export class ImageName extends Game {
-    questions: ImageNameQuestion[] = [];
+    questions: ImageNameQuestion[];
     isWrite: boolean;
 
     constructor(values: object = {}) {
         super();
-        Object.assign(this as any, values);
+        Object.assign({}, this, {
+          '@type': 'ImageName'
+        });
       }
 
+  public toJson(): ImageName{
+    return Object.assign({}, this, {
+      '@type': 'ImageName'
+    });
+  }
 }

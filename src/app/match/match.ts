@@ -8,11 +8,21 @@ export class Match extends Resource{
   rating: number;
   description: string;
   contentCreator: ContentCreator;
-  games: Game[];
+  games: Array<Game>;
+  //games: string[];
 
   uri: string;
 
-  constructor() {
+  constructor(values: object = {}){
     super();
+    Object.assign(this as any, values)
   }
+
+
+  setGames(games: Game[]){
+    this.games = games;
+  }
+  /*setGames(uri: string[]){
+    this.games = uri;
+  }*/
 }
