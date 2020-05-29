@@ -18,9 +18,22 @@
         <h6 class="card-subtitle text-muted">Creator</h6>
         <p class="card-text">{{match.contentCreator?.id}}</p>
       </div>
-      <div class="col-md-4 p-3">
-        <h6 class="card-subtitle text-muted">Games</h6>
-        <p class="card-text">{{match.games}}</p>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Games</label>
+      <div class="card mb-1" *ngFor="let game of games">
+        <div class="card-block row m-1 col-12">
+          <div class="card-body row align-items-center">
+            <!--input type="checkbox" (click)="onSelect(game)"-->
+            <div class="col-6 mt-1">
+              <h6 class="card-subtitle text-muted">URI: {{game.uri}}</h6>
+              <h6 class="card-subtitle text-muted">Instrucions: {{game.instructions}}</h6>
+            </div>
+            <button id="deleteGameBtn" type="button" (click)="deleteGame(game)"
+                    class="btn m-1 btn-outline-danger">Delete
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="card-footer text-right">
