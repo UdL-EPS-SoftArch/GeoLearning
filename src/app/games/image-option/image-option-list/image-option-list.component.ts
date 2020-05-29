@@ -3,6 +3,8 @@ import { ImageOption } from '../imageOption';
 import { Router } from '@angular/router';
 import { ImageOptionService } from '../image-option.service';
 import { AuthenticationBasicService } from '../../../login-basic/authentication-basic.service';
+import {ImageImage} from "../../image-image/imageImage";
+import {ContentCreator} from "../../../content-creator/contentCreator";
 
 
 @Component({
@@ -36,10 +38,14 @@ export class ImageOptionListComponent implements OnInit {
       (imageOptionGames: ImageOption[]) => this.imageOptionGames = imageOptionGames);
   }
 
-  getId(i: number) {
-    const uri = this.imageOptionGames[i].uri.toString();
-    const splitted = uri.split('/');
-    return splitted[2];
+  getCurrentUser(): string {
+    return this.authenticationService.getCurrentUser().id;
+  }
+
+  getCreatorIDFor(imageOption: ImageImage): string {
+    imageOption.getRelation(ContentCreator, 'creator').subscribe(
+      (creator: ContentCreator) => imageOption.creator = creator);
+    return imageOption.creator.id;
   }
 
   isLoggedCreator() {
