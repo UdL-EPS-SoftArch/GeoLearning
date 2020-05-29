@@ -11,4 +11,9 @@ export class Game extends Resource {
         super();
         Object.assign(this as any, values);
     }
+
+    equalsTo(game: Game): boolean{
+      if(this.uri != game.uri) return false;
+      return true;
+    }
 }

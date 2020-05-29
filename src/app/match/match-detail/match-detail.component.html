@@ -29,7 +29,7 @@
               <h6 class="card-subtitle text-muted">URI: {{game.uri}}</h6>
               <h6 class="card-subtitle text-muted">Instrucions: {{game.instructions}}</h6>
             </div>
-            <button id="deleteGameBtn" type="button" (click)="deleteGame(game)"
+            <button id="deleteGameBtn" type="button" (click)="deleteGame(game)" [routerLink]="['/matches', match?.id]"
                     class="btn m-1 btn-outline-danger">Delete
             </button>
           </div>

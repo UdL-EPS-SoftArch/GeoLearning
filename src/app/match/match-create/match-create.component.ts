@@ -42,7 +42,6 @@ export class MatchCreateComponent implements OnInit {
   }
 
   onSelect(game: Game): void{
-    console.log(game.uri);
     if(this.selectedGames.has(game.uri))
       this.selectedGames.delete(game.uri);
     else

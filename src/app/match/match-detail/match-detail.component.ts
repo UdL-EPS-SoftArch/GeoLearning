@@ -24,18 +24,22 @@ export class MatchDetailComponent implements OnInit {
     this.matchService.get(this.id).subscribe((match: Match) => {
       this.match = match;
       match.getRelation(ContentCreator, 'contentCreator').subscribe((creator: ContentCreator) => this.match.contentCreator = creator);
-      match.getRelationArray(Game, "games").subscribe((games: Game[]) => this.games = games);
+      match.getRelationArray(Game, "games").subscribe((games: Game[]) => {
+        this.games = games;
+        this.games.forEach((game) => {this.setGames.add(game.uri)})
+      });
     });
-    for(let gm of this.games) this.setGames.add(gm.uri);
   }
 
   deleteGame(game: Game): void{
+    console.log(this.games[0].uri);
+    console.log(this.setGames);
     console.log(game.uri);
     this.setGames.delete(game.uri);
     this.match.setGames(Array.from(this.setGames));
     this.matchService.patch(this.match).subscribe(
       () =>
-        this.router.navigate['/match/' + this.id]);
+        this.router.navigate['/matches/' + this.id]);
     this.ngOnInit();
   }
 }
