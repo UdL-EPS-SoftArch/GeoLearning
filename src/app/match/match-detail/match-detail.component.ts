@@ -3,7 +3,7 @@ import {Match} from '../match';
 import {Router, ActivatedRoute} from '@angular/router';
 import {MatchService} from '../match.service';
 import {ContentCreator} from '../../content-creator/contentCreator';
-import {Game} from "../../games/game";
+import {Game} from '../../games/game';
 
 @Component({
   selector: 'app-match-detail',
@@ -24,7 +24,7 @@ export class MatchDetailComponent implements OnInit {
     this.matchService.get(this.id).subscribe((match: Match) => {
       this.match = match;
       match.getRelation(ContentCreator, 'contentCreator').subscribe((creator: ContentCreator) => this.match.contentCreator = creator);
-      match.getRelationArray(Game, "games").subscribe((games: Game[]) => {
+      match.getRelationArray(Game, 'games').subscribe((games: Game[]) => {
         this.games = games;
         this.games.forEach((game) => {this.setGames.add(game.uri)})
       });

@@ -3,10 +3,9 @@ import {Match} from '../match';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatchService} from '../match.service';
 import {Location} from '@angular/common';
-import {Game} from "../../games/game";
-import {GameService} from "../../games/games.service";
-import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
-import set = Reflect.set;
+import {Game} from '../../games/game';
+import {GameService} from '../../games/games.service';
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 
 
 @Component({
@@ -44,7 +43,7 @@ export class MatchEditComponent implements OnInit {
     this.matchService.get(this.id).subscribe(
       match => {
         this.match = match;
-        this.match.getRelationArray(Game, "games").subscribe((games: Game[]) => {
+        this.match.getRelationArray(Game, 'games').subscribe((games: Game[]) => {
           games.forEach((game: Game) => {
             this.selectedGames.add(game.uri);
             this.setGames.forEach((gm: Game) => {

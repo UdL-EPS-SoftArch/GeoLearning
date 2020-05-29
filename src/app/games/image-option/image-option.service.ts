@@ -2,7 +2,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { RestService } from '@lagoshny/ngx-hal-client';
 import { ImageOption } from './imageOption';
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class ImageOptionService extends RestService<ImageOption> {

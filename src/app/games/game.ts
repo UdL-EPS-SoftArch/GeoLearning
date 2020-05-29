@@ -13,7 +13,6 @@ export class Game extends Resource {
     }
 
     equalsTo(game: Game): boolean{
-      if(this.uri != game.uri) return false;
-      return true;
+      return this.uri === game.uri;
     }
 }
