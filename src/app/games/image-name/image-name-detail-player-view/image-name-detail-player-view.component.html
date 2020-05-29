@@ -1,0 +1,59 @@
+<form id="playImageName-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+    <h1>{{imageName.instructions}}</h1>
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card-header">
+            <h3 class="card-title text-muted">Images</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let item of images; let i=index">
+              <div class="container">
+                <div class="row">
+                  <div>
+                    <div class="form-group">
+                      <input id="i" name="response" type="number" class="form-control" min="0" placeholder="0" style="width: 70px"
+                      [(ngModel)]="responses[i]">
+                    </div>
+                  </div>
+                  <div class="ml-auto">
+                    <img style="width:100px; border-style:outset;" src="{{getImage(item)}}">
+                  </div>
+                  <div class="ml-auto">
+                    <p>{{i}}</p>
+                  </div>
+                </div> 
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <div class="card-header">
+            <h3 class="card-title text-muted">Solutions</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let item of solutions; let i=index">
+              <div class="container">
+                <div class="row">
+                  <div>
+                    <p>{{i}}</p>
+                  </div>
+                  <div class="ml-auto">
+                    <h2>{{item}}</h2>
+                  </div>
+                </div>
+              </div> 
+            </li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <button id="submit" type="submit" class="btn m-1 btn-success pull-right"
+              [disabled]="!form.form.valid">Submit</button>
+      <button id="imageNameDetail" type="button" [routerLink]="['/imageNames/']"
+              class="btn m-1 btn-outline-primary pull-right">Back</button>
+    </div>
+
+  </fieldset>
+</form>
