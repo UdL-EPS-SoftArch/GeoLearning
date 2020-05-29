@@ -3,8 +3,8 @@ import { ImageOption } from '../imageOption';
 import { Router } from '@angular/router';
 import { ImageOptionService } from '../image-option.service';
 import { AuthenticationBasicService } from '../../../login-basic/authentication-basic.service';
-import {ImageImage} from "../../image-image/imageImage";
-import {ContentCreator} from "../../../content-creator/contentCreator";
+import {ImageImage} from '../../image-image/imageImage';
+import {ContentCreator} from '../../../content-creator/contentCreator';
 
 
 @Component({

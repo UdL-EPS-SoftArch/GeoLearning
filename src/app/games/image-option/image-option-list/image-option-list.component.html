@@ -1,19 +1,19 @@
 <div class="card mb-1" *ngFor="let imageOption of imageOptionGames;let indexOfelement=index;">
-  <div class="card mb-1" *ngIf="getCurrentUser()==getCreatorIDFor(imageOption)">
-  <div class="card-block row m-1 col-12">
-    <div class="card-body row align-items-center">
-      <div class="col-6 mt-1">
-        <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageOption.uri]">
-          Details
-        </button>
-      </div>
-      <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Instructions</h6>
-        <p class="card-text">{{imageOption.instructions}}</p>
+   <div class="card mb-1" *ngIf="getCurrentUser()==getCreatorIDFor(imageOption)">
+    <div class="card-block row m-1 col-12">
+      <div class="card-body row align-items-center">
+        <div class="col-6 mt-1">
+          <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageOption.uri]">
+            Details
+          </button>
+        </div>
+        <div class="col-6 mt-1">
+          <h6 class="card-subtitle text-muted">Instructions</h6>
+          <p class="card-text">{{imageOption.instructions}}</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 <div class="d-flex justify-content-end" *ngIf="isLoggedCreator()">
   <button id="createBtn" type="button" [routerLink]="['/imageOptions/new']" class="btn m-1 btn-primary">Create Image Option Game</button>
