@@ -77,6 +77,8 @@ import { ImageImageQuestionCreateComponent } from './questions/image-image-quest
 import { ImageImageQuestionListComponent } from './questions/image-image-question/image-image-question-list/image-image-question-list.component';
 import { ImageImageDetailComponent } from './games/image-image/image-image-detail/image-image-detail.component';
 import { ImageImageEditComponent } from './games/image-image/image-image-edit/image-image-edit.component';
+import { ImageNameDetailPlayerViewComponent } from './games/image-name/image-name-detail-player-view/image-name-detail-player-view.component';
+import { ImageWriteDetailPlayerViewComponent } from './games/image-name/image-write-detail-player-view/image-write-detail-player-view.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +129,8 @@ import { ImageImageEditComponent } from './games/image-image/image-image-edit/im
     ImageOptionQuestionCreateComponent,
     ImageOptionQuestionListComponent,
     ImageOptionEditComponent,
+    ImageNameDetailPlayerViewComponent,
+    ImageWriteDetailPlayerViewComponent,
   ],
   imports: [
     BrowserModule,

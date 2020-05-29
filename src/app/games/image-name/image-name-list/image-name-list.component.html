@@ -1,10 +1,19 @@
 <div *ngFor="let imageName of imageNameGames;">
-  <div class="card mb-1" *ngIf="getCurrentUser()==getCreatorIDFor(imageName)">
+  <div class="card mb-1" *ngIf="getCurrentUser()==getCreatorIDFor(imageName)||!isLoggedCreator()">
       <div class="card-block row m-1 col-12">
         <div class="card-body row align-items-center">
           <div class="col-6 mt-1">
-            <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageName.uri]">
+            <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageName.uri]" 
+                    *ngIf="isLoggedCreator()">
               Details
+            </button>
+            <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageName.uri + '/play']" 
+                    *ngIf="!isLoggedCreator()&&!imageName.isWrite">
+              Play
+            </button>
+            <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageName.uri + '/playWrite']" 
+                    *ngIf="!isLoggedCreator()&&imageName.isWrite">
+              Play
             </button>
           </div>
           <div class="col-6 mt-1">
