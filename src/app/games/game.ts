@@ -1,6 +1,7 @@
 import { Resource } from '@lagoshny/ngx-hal-client';
 import { ContentCreator } from '../content-creator/contentCreator';
 
+
 export class Game extends Resource {
     uri: string;
     instructions: string;
@@ -9,6 +10,9 @@ export class Game extends Resource {
     constructor(values: object = {}) {
         super();
         Object.assign(this as any, values);
-      }
+    }
 
+    equalsTo(game: Game): boolean{
+      return this.uri === game.uri;
+    }
 }

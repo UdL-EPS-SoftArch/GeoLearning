@@ -9,5 +9,4 @@ export class ImageOption extends Game {
     super();
 
   }
-
 }

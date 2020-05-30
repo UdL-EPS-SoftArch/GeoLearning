@@ -67,9 +67,6 @@ import {ImageOptionQuestionService} from './questions/image-option-question/imag
 import {ImageOptionQuestionCreateComponent} from './questions/image-option-question/image-option-question-create/image-option-question-create.component';
 import {ImageOptionQuestionListComponent} from './questions/image-option-question/image-option-question-list/image-option-question-list.component';
 
-
-
-
 import { ImageImageCreateComponent } from './games/image-image/image-image-create/image-image-create.component';
 import { ImageImageListComponent } from './games/image-image/image-image-list/image-image-list.component';
 import { ImageImageQuestionService } from './questions/image-image-question/image-image-question.service';

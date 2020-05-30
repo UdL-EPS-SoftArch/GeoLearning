@@ -7,5 +7,4 @@ export class ImageImage extends Game {
     super();
 
   }
-
 }
