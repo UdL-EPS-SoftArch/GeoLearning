@@ -36,7 +36,6 @@ export class MatchEditComponent implements OnInit {
       games.forEach((game: Game) => {
         this.setGames.add(game);
       });
-      this.games = Array.from(this.setGames);
     });
 
     this.id = this.route.snapshot.paramMap.get('id');
