@@ -1,13 +1,16 @@
 <div class="card mb-1" *ngFor="let imageOption of imageOptionGames;let indexOfelement=index;">
-  <div class="card-block row m-1 col-12">
-    <div class="card-body row align-items-center">
-      <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Uri</h6>
-        <a class="card-text" [routerLink]="['/imageOptions', getId(indexOfelement)]">{{getId(indexOfelement)}}</a>
-      </div>
-      <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Instructions</h6>
-        <p class="card-text">{{imageOption.instructions}}</p>
+   <div class="card mb-1" *ngIf="getCurrentUser()==getCreatorIDFor(imageOption)">
+    <div class="card-block row m-1 col-12">
+      <div class="card-body row align-items-center">
+        <div class="col-6 mt-1">
+          <button id="detailBtn" type="button" class="btn m-1 btn-info" [routerLink]="[imageOption.uri]">
+            Details
+          </button>
+        </div>
+        <div class="col-6 mt-1">
+          <h6 class="card-subtitle text-muted">Instructions</h6>
+          <p class="card-text">{{imageOption.instructions}}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -19,4 +22,3 @@
 <ngb-pagination class="d-flex justify-content-center"
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalImageOptionGames"
                 (pageChange)="changePage()"></ngb-pagination>
-

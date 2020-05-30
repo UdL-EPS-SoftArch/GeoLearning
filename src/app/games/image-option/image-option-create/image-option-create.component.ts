@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ImageOptionService } from '../image-option.service';
-import { Location } from '@angular/common';
 import {ImageOption} from '../imageOption';
-import get = Reflect.get;
+import {AuthenticationBasicService} from '../../../login-basic/authentication-basic.service';
 
 @Component({
   selector: 'app-image-option-create',
@@ -15,15 +14,16 @@ export class ImageOptionCreateComponent implements OnInit {
 
   constructor(private router: Router,
               private imageOptionService: ImageOptionService,
-              private location: Location) { }
+              private authenticationService: AuthenticationBasicService) { }
 
   ngOnInit(): void {
     this.imageOption = new ImageOption();
   }
 
   onSubmit(): void {
+    this.imageOption.creator = this.authenticationService.getCurrentUser();
     this.imageOptionService.create(this.imageOption).subscribe(
-      (imageOption: ImageOption) => {
+      () => {
         this.router.navigate(['/imageOptions/'+this.getId()]);
       }
     )
@@ -32,8 +32,5 @@ export class ImageOptionCreateComponent implements OnInit {
     const uri = this.imageOption.uri.toString();
     const splitted = uri.split('/');
     return splitted[2];
-  }
-  goBack() {
-    this.location.back();
   }
 }
