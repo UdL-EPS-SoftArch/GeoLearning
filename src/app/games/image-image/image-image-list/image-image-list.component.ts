@@ -1,3 +1,4 @@
+import { ContentCreator } from '../../../content-creator/contentCreator';
 import { ImageImageService } from '../image-image.service';
 import { Router } from '@angular/router';
 import { ImageImage } from '../imageImage';
@@ -33,14 +34,19 @@ export class ImageImageListComponent implements OnInit {
   }
 
   changePage() {
-//    this.imageImageService.page(this.page - 1).subscribe(
-//      (this.imageImageGames: ImageImage[]) => this.imageImageGames = this.imageImageGames);
+    this.imageImageService.page(this.page - 1).subscribe(
+      (imageImageGames: ImageImage[]) => this.imageImageGames = imageImageGames);
   }
 
-  getId(i: number) {
-    const uri = this.imageImageGames[i].uri.toString();
-    const splitted = uri.split('/');
-    return splitted[2];
+
+  getCurrentUser(): string {
+    return this.authenticationService.getCurrentUser().id;
+  }
+
+  getCreatorIDFor(imageImage: ImageImage): string {
+    imageImage.getRelation(ContentCreator, 'creator').subscribe(
+      (creator: ContentCreator) => imageImage.creator = creator);
+    return imageImage.creator.id;
   }
 
   isLoggedCreator() {
